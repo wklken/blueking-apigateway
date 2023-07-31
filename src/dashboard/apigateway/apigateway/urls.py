@@ -66,7 +66,6 @@ urlpatterns = [
     path("backend/apis/<int:gateway_id>/micro-gateways/", include("apigateway.apps.micro_gateway.urls")),
     path("backend/esb/", include("apigateway.apps.esb.urls")),
     # FIXME: change this to a new url in future
-    # switch language
     # api-support backend/docs urls -- begin
     path("backend/docs/apigateway/", include("apigateway.apps.docs.gateway.urls")),
     path("backend/docs/esb/", include("apigateway.apps.docs.esb.urls")),
