@@ -70,11 +70,13 @@ type openapiGatewayResourceVersionSpec struct {
 	fieldMap map[string]field.Expr
 }
 
+// Table ...
 func (o openapiGatewayResourceVersionSpec) Table(newTableName string) *openapiGatewayResourceVersionSpec {
 	o.openapiGatewayResourceVersionSpecDo.UseTable(newTableName)
 	return o.updateTableName(newTableName)
 }
 
+// As ...
 func (o openapiGatewayResourceVersionSpec) As(alias string) *openapiGatewayResourceVersionSpec {
 	o.openapiGatewayResourceVersionSpecDo.DO = *(o.openapiGatewayResourceVersionSpecDo.As(alias).(*gen.DO))
 	return o.updateTableName(alias)
@@ -92,22 +94,27 @@ func (o *openapiGatewayResourceVersionSpec) updateTableName(table string) *opena
 	return o
 }
 
+// WithContext ...
 func (o *openapiGatewayResourceVersionSpec) WithContext(ctx context.Context) IOpenapiGatewayResourceVersionSpecDo {
 	return o.openapiGatewayResourceVersionSpecDo.WithContext(ctx)
 }
 
+// TableName ...
 func (o openapiGatewayResourceVersionSpec) TableName() string {
 	return o.openapiGatewayResourceVersionSpecDo.TableName()
 }
 
+// Alias ...
 func (o openapiGatewayResourceVersionSpec) Alias() string {
 	return o.openapiGatewayResourceVersionSpecDo.Alias()
 }
 
+// Columns ...
 func (o openapiGatewayResourceVersionSpec) Columns(cols ...field.Expr) gen.Columns {
 	return o.openapiGatewayResourceVersionSpecDo.Columns(cols...)
 }
 
+// GetFieldByName ...
 func (o *openapiGatewayResourceVersionSpec) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 	_f, ok := o.fieldMap[fieldName]
 	if !ok || _f == nil {
@@ -137,6 +144,7 @@ func (o openapiGatewayResourceVersionSpec) replaceDB(db *gorm.DB) openapiGateway
 
 type openapiGatewayResourceVersionSpecDo struct{ gen.DO }
 
+// IOpenapiGatewayResourceVersionSpecDo ...
 type IOpenapiGatewayResourceVersionSpecDo interface {
 	gen.SubQuery
 	Debug() IOpenapiGatewayResourceVersionSpecDo
@@ -207,30 +215,37 @@ type IOpenapiGatewayResourceVersionSpecDo interface {
 	schema.Tabler
 }
 
+// Debug ...
 func (o openapiGatewayResourceVersionSpecDo) Debug() IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Debug())
 }
 
+// WithContext ...
 func (o openapiGatewayResourceVersionSpecDo) WithContext(ctx context.Context) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.WithContext(ctx))
 }
 
+// ReadDB ...
 func (o openapiGatewayResourceVersionSpecDo) ReadDB() IOpenapiGatewayResourceVersionSpecDo {
 	return o.Clauses(dbresolver.Read)
 }
 
+// WriteDB ...
 func (o openapiGatewayResourceVersionSpecDo) WriteDB() IOpenapiGatewayResourceVersionSpecDo {
 	return o.Clauses(dbresolver.Write)
 }
 
+// Session ...
 func (o openapiGatewayResourceVersionSpecDo) Session(config *gorm.Session) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Session(config))
 }
 
+// Clauses ...
 func (o openapiGatewayResourceVersionSpecDo) Clauses(conds ...clause.Expression) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Clauses(conds...))
 }
 
+// Returning ...
 func (o openapiGatewayResourceVersionSpecDo) Returning(
 	value interface{},
 	columns ...string,
@@ -238,34 +253,42 @@ func (o openapiGatewayResourceVersionSpecDo) Returning(
 	return o.withDO(o.DO.Returning(value, columns...))
 }
 
+// Not ...
 func (o openapiGatewayResourceVersionSpecDo) Not(conds ...gen.Condition) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Not(conds...))
 }
 
+// Or ...
 func (o openapiGatewayResourceVersionSpecDo) Or(conds ...gen.Condition) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Or(conds...))
 }
 
+// Select ...
 func (o openapiGatewayResourceVersionSpecDo) Select(conds ...field.Expr) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Select(conds...))
 }
 
+// Where ...
 func (o openapiGatewayResourceVersionSpecDo) Where(conds ...gen.Condition) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Where(conds...))
 }
 
+// Order ...
 func (o openapiGatewayResourceVersionSpecDo) Order(conds ...field.Expr) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Order(conds...))
 }
 
+// Distinct ...
 func (o openapiGatewayResourceVersionSpecDo) Distinct(cols ...field.Expr) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Distinct(cols...))
 }
 
+// Omit ...
 func (o openapiGatewayResourceVersionSpecDo) Omit(cols ...field.Expr) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Omit(cols...))
 }
 
+// Join ...
 func (o openapiGatewayResourceVersionSpecDo) Join(
 	table schema.Tabler,
 	on ...field.Expr,
@@ -273,6 +296,7 @@ func (o openapiGatewayResourceVersionSpecDo) Join(
 	return o.withDO(o.DO.Join(table, on...))
 }
 
+// LeftJoin ...
 func (o openapiGatewayResourceVersionSpecDo) LeftJoin(
 	table schema.Tabler,
 	on ...field.Expr,
@@ -280,6 +304,7 @@ func (o openapiGatewayResourceVersionSpecDo) LeftJoin(
 	return o.withDO(o.DO.LeftJoin(table, on...))
 }
 
+// RightJoin ...
 func (o openapiGatewayResourceVersionSpecDo) RightJoin(
 	table schema.Tabler,
 	on ...field.Expr,
@@ -287,32 +312,39 @@ func (o openapiGatewayResourceVersionSpecDo) RightJoin(
 	return o.withDO(o.DO.RightJoin(table, on...))
 }
 
+// Group ...
 func (o openapiGatewayResourceVersionSpecDo) Group(cols ...field.Expr) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Group(cols...))
 }
 
+// Having ...
 func (o openapiGatewayResourceVersionSpecDo) Having(conds ...gen.Condition) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Having(conds...))
 }
 
+// Limit ...
 func (o openapiGatewayResourceVersionSpecDo) Limit(limit int) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Limit(limit))
 }
 
+// Offset ...
 func (o openapiGatewayResourceVersionSpecDo) Offset(offset int) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Offset(offset))
 }
 
+// Scopes ...
 func (o openapiGatewayResourceVersionSpecDo) Scopes(
 	funcs ...func(gen.Dao) gen.Dao,
 ) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Scopes(funcs...))
 }
 
+// Unscoped ...
 func (o openapiGatewayResourceVersionSpecDo) Unscoped() IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Unscoped())
 }
 
+// Create ...
 func (o openapiGatewayResourceVersionSpecDo) Create(values ...*model.OpenapiGatewayResourceVersionSpec) error {
 	if len(values) == 0 {
 		return nil
@@ -320,6 +352,7 @@ func (o openapiGatewayResourceVersionSpecDo) Create(values ...*model.OpenapiGate
 	return o.DO.Create(values)
 }
 
+// CreateInBatches ...
 func (o openapiGatewayResourceVersionSpecDo) CreateInBatches(
 	values []*model.OpenapiGatewayResourceVersionSpec,
 	batchSize int,
@@ -336,6 +369,7 @@ func (o openapiGatewayResourceVersionSpecDo) Save(values ...*model.OpenapiGatewa
 	return o.DO.Save(values)
 }
 
+// First ...
 func (o openapiGatewayResourceVersionSpecDo) First() (*model.OpenapiGatewayResourceVersionSpec, error) {
 	if result, err := o.DO.First(); err != nil {
 		return nil, err
@@ -344,6 +378,7 @@ func (o openapiGatewayResourceVersionSpecDo) First() (*model.OpenapiGatewayResou
 	}
 }
 
+// Take ...
 func (o openapiGatewayResourceVersionSpecDo) Take() (*model.OpenapiGatewayResourceVersionSpec, error) {
 	if result, err := o.DO.Take(); err != nil {
 		return nil, err
@@ -352,6 +387,7 @@ func (o openapiGatewayResourceVersionSpecDo) Take() (*model.OpenapiGatewayResour
 	}
 }
 
+// Last ...
 func (o openapiGatewayResourceVersionSpecDo) Last() (*model.OpenapiGatewayResourceVersionSpec, error) {
 	if result, err := o.DO.Last(); err != nil {
 		return nil, err
@@ -360,11 +396,13 @@ func (o openapiGatewayResourceVersionSpecDo) Last() (*model.OpenapiGatewayResour
 	}
 }
 
+// Find ...
 func (o openapiGatewayResourceVersionSpecDo) Find() ([]*model.OpenapiGatewayResourceVersionSpec, error) {
 	result, err := o.DO.Find()
 	return result.([]*model.OpenapiGatewayResourceVersionSpec), err
 }
 
+// FindInBatch ...
 func (o openapiGatewayResourceVersionSpecDo) FindInBatch(
 	batchSize int,
 	fc func(tx gen.Dao, batch int) error,
@@ -377,6 +415,7 @@ func (o openapiGatewayResourceVersionSpecDo) FindInBatch(
 	return results, err
 }
 
+// FindInBatches ...
 func (o openapiGatewayResourceVersionSpecDo) FindInBatches(
 	result *[]*model.OpenapiGatewayResourceVersionSpec,
 	batchSize int,
@@ -385,14 +424,17 @@ func (o openapiGatewayResourceVersionSpecDo) FindInBatches(
 	return o.DO.FindInBatches(result, batchSize, fc)
 }
 
+// Attrs ...
 func (o openapiGatewayResourceVersionSpecDo) Attrs(attrs ...field.AssignExpr) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Attrs(attrs...))
 }
 
+// Assign ...
 func (o openapiGatewayResourceVersionSpecDo) Assign(attrs ...field.AssignExpr) IOpenapiGatewayResourceVersionSpecDo {
 	return o.withDO(o.DO.Assign(attrs...))
 }
 
+// Joins ...
 func (o openapiGatewayResourceVersionSpecDo) Joins(fields ...field.RelationField) IOpenapiGatewayResourceVersionSpecDo {
 	for _, _f := range fields {
 		o = *o.withDO(o.DO.Joins(_f))
@@ -400,6 +442,7 @@ func (o openapiGatewayResourceVersionSpecDo) Joins(fields ...field.RelationField
 	return &o
 }
 
+// Preload ...
 func (o openapiGatewayResourceVersionSpecDo) Preload(
 	fields ...field.RelationField,
 ) IOpenapiGatewayResourceVersionSpecDo {
@@ -409,6 +452,7 @@ func (o openapiGatewayResourceVersionSpecDo) Preload(
 	return &o
 }
 
+// FirstOrInit ...
 func (o openapiGatewayResourceVersionSpecDo) FirstOrInit() (*model.OpenapiGatewayResourceVersionSpec, error) {
 	if result, err := o.DO.FirstOrInit(); err != nil {
 		return nil, err
@@ -417,6 +461,7 @@ func (o openapiGatewayResourceVersionSpecDo) FirstOrInit() (*model.OpenapiGatewa
 	}
 }
 
+// FirstOrCreate ...
 func (o openapiGatewayResourceVersionSpecDo) FirstOrCreate() (*model.OpenapiGatewayResourceVersionSpec, error) {
 	if result, err := o.DO.FirstOrCreate(); err != nil {
 		return nil, err
@@ -425,6 +470,7 @@ func (o openapiGatewayResourceVersionSpecDo) FirstOrCreate() (*model.OpenapiGate
 	}
 }
 
+// FindByPage ...
 func (o openapiGatewayResourceVersionSpecDo) FindByPage(
 	offset int,
 	limit int,
@@ -443,6 +489,7 @@ func (o openapiGatewayResourceVersionSpecDo) FindByPage(
 	return
 }
 
+// ScanByPage ...
 func (o openapiGatewayResourceVersionSpecDo) ScanByPage(
 	result interface{},
 	offset int,
@@ -457,10 +504,12 @@ func (o openapiGatewayResourceVersionSpecDo) ScanByPage(
 	return
 }
 
+// Scan ...
 func (o openapiGatewayResourceVersionSpecDo) Scan(result interface{}) (err error) {
 	return o.DO.Scan(result)
 }
 
+// Delete ...
 func (o openapiGatewayResourceVersionSpecDo) Delete(
 	models ...*model.OpenapiGatewayResourceVersionSpec,
 ) (result gen.ResultInfo, err error) {

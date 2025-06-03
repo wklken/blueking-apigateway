@@ -78,11 +78,13 @@ type mcpServer struct {
 	fieldMap map[string]field.Expr
 }
 
+// Table ...
 func (m mcpServer) Table(newTableName string) *mcpServer {
 	m.mcpServerDo.UseTable(newTableName)
 	return m.updateTableName(newTableName)
 }
 
+// As ...
 func (m mcpServer) As(alias string) *mcpServer {
 	m.mcpServerDo.DO = *(m.mcpServerDo.As(alias).(*gen.DO))
 	return m.updateTableName(alias)
@@ -105,16 +107,21 @@ func (m *mcpServer) updateTableName(table string) *mcpServer {
 	return m
 }
 
+// WithContext ...
 func (m *mcpServer) WithContext(ctx context.Context) IMcpServerDo {
 	return m.mcpServerDo.WithContext(ctx)
 }
 
+// TableName ...
 func (m mcpServer) TableName() string { return m.mcpServerDo.TableName() }
 
+// Alias ...
 func (m mcpServer) Alias() string { return m.mcpServerDo.Alias() }
 
+// Columns ...
 func (m mcpServer) Columns(cols ...field.Expr) gen.Columns { return m.mcpServerDo.Columns(cols...) }
 
+// GetFieldByName ...
 func (m *mcpServer) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 	_f, ok := m.fieldMap[fieldName]
 	if !ok || _f == nil {
@@ -149,6 +156,7 @@ func (m mcpServer) replaceDB(db *gorm.DB) mcpServer {
 
 type mcpServerDo struct{ gen.DO }
 
+// IMcpServerDo ...
 type IMcpServerDo interface {
 	gen.SubQuery
 	Debug() IMcpServerDo
@@ -212,98 +220,122 @@ type IMcpServerDo interface {
 	schema.Tabler
 }
 
+// Debug ...
 func (m mcpServerDo) Debug() IMcpServerDo {
 	return m.withDO(m.DO.Debug())
 }
 
+// WithContext ...
 func (m mcpServerDo) WithContext(ctx context.Context) IMcpServerDo {
 	return m.withDO(m.DO.WithContext(ctx))
 }
 
+// ReadDB ...
 func (m mcpServerDo) ReadDB() IMcpServerDo {
 	return m.Clauses(dbresolver.Read)
 }
 
+// WriteDB ...
 func (m mcpServerDo) WriteDB() IMcpServerDo {
 	return m.Clauses(dbresolver.Write)
 }
 
+// Session ...
 func (m mcpServerDo) Session(config *gorm.Session) IMcpServerDo {
 	return m.withDO(m.DO.Session(config))
 }
 
+// Clauses ...
 func (m mcpServerDo) Clauses(conds ...clause.Expression) IMcpServerDo {
 	return m.withDO(m.DO.Clauses(conds...))
 }
 
+// Returning ...
 func (m mcpServerDo) Returning(value interface{}, columns ...string) IMcpServerDo {
 	return m.withDO(m.DO.Returning(value, columns...))
 }
 
+// Not ...
 func (m mcpServerDo) Not(conds ...gen.Condition) IMcpServerDo {
 	return m.withDO(m.DO.Not(conds...))
 }
 
+// Or ...
 func (m mcpServerDo) Or(conds ...gen.Condition) IMcpServerDo {
 	return m.withDO(m.DO.Or(conds...))
 }
 
+// Select ...
 func (m mcpServerDo) Select(conds ...field.Expr) IMcpServerDo {
 	return m.withDO(m.DO.Select(conds...))
 }
 
+// Where ...
 func (m mcpServerDo) Where(conds ...gen.Condition) IMcpServerDo {
 	return m.withDO(m.DO.Where(conds...))
 }
 
+// Order ...
 func (m mcpServerDo) Order(conds ...field.Expr) IMcpServerDo {
 	return m.withDO(m.DO.Order(conds...))
 }
 
+// Distinct ...
 func (m mcpServerDo) Distinct(cols ...field.Expr) IMcpServerDo {
 	return m.withDO(m.DO.Distinct(cols...))
 }
 
+// Omit ...
 func (m mcpServerDo) Omit(cols ...field.Expr) IMcpServerDo {
 	return m.withDO(m.DO.Omit(cols...))
 }
 
+// Join ...
 func (m mcpServerDo) Join(table schema.Tabler, on ...field.Expr) IMcpServerDo {
 	return m.withDO(m.DO.Join(table, on...))
 }
 
+// LeftJoin ...
 func (m mcpServerDo) LeftJoin(table schema.Tabler, on ...field.Expr) IMcpServerDo {
 	return m.withDO(m.DO.LeftJoin(table, on...))
 }
 
+// RightJoin ...
 func (m mcpServerDo) RightJoin(table schema.Tabler, on ...field.Expr) IMcpServerDo {
 	return m.withDO(m.DO.RightJoin(table, on...))
 }
 
+// Group ...
 func (m mcpServerDo) Group(cols ...field.Expr) IMcpServerDo {
 	return m.withDO(m.DO.Group(cols...))
 }
 
+// Having ...
 func (m mcpServerDo) Having(conds ...gen.Condition) IMcpServerDo {
 	return m.withDO(m.DO.Having(conds...))
 }
 
+// Limit ...
 func (m mcpServerDo) Limit(limit int) IMcpServerDo {
 	return m.withDO(m.DO.Limit(limit))
 }
 
+// Offset ...
 func (m mcpServerDo) Offset(offset int) IMcpServerDo {
 	return m.withDO(m.DO.Offset(offset))
 }
 
+// Scopes ...
 func (m mcpServerDo) Scopes(funcs ...func(gen.Dao) gen.Dao) IMcpServerDo {
 	return m.withDO(m.DO.Scopes(funcs...))
 }
 
+// Unscoped ...
 func (m mcpServerDo) Unscoped() IMcpServerDo {
 	return m.withDO(m.DO.Unscoped())
 }
 
+// Create ...
 func (m mcpServerDo) Create(values ...*model.MCPServer) error {
 	if len(values) == 0 {
 		return nil
@@ -311,6 +343,7 @@ func (m mcpServerDo) Create(values ...*model.MCPServer) error {
 	return m.DO.Create(values)
 }
 
+// CreateInBatches ...
 func (m mcpServerDo) CreateInBatches(values []*model.MCPServer, batchSize int) error {
 	return m.DO.CreateInBatches(values, batchSize)
 }
@@ -324,6 +357,7 @@ func (m mcpServerDo) Save(values ...*model.MCPServer) error {
 	return m.DO.Save(values)
 }
 
+// First ...
 func (m mcpServerDo) First() (*model.MCPServer, error) {
 	if result, err := m.DO.First(); err != nil {
 		return nil, err
@@ -332,6 +366,7 @@ func (m mcpServerDo) First() (*model.MCPServer, error) {
 	}
 }
 
+// Take ...
 func (m mcpServerDo) Take() (*model.MCPServer, error) {
 	if result, err := m.DO.Take(); err != nil {
 		return nil, err
@@ -340,6 +375,7 @@ func (m mcpServerDo) Take() (*model.MCPServer, error) {
 	}
 }
 
+// Last ...
 func (m mcpServerDo) Last() (*model.MCPServer, error) {
 	if result, err := m.DO.Last(); err != nil {
 		return nil, err
@@ -348,11 +384,13 @@ func (m mcpServerDo) Last() (*model.MCPServer, error) {
 	}
 }
 
+// Find ...
 func (m mcpServerDo) Find() ([]*model.MCPServer, error) {
 	result, err := m.DO.Find()
 	return result.([]*model.MCPServer), err
 }
 
+// FindInBatch ...
 func (m mcpServerDo) FindInBatch(
 	batchSize int,
 	fc func(tx gen.Dao, batch int) error,
@@ -365,6 +403,7 @@ func (m mcpServerDo) FindInBatch(
 	return results, err
 }
 
+// FindInBatches ...
 func (m mcpServerDo) FindInBatches(
 	result *[]*model.MCPServer,
 	batchSize int,
@@ -373,14 +412,17 @@ func (m mcpServerDo) FindInBatches(
 	return m.DO.FindInBatches(result, batchSize, fc)
 }
 
+// Attrs ...
 func (m mcpServerDo) Attrs(attrs ...field.AssignExpr) IMcpServerDo {
 	return m.withDO(m.DO.Attrs(attrs...))
 }
 
+// Assign ...
 func (m mcpServerDo) Assign(attrs ...field.AssignExpr) IMcpServerDo {
 	return m.withDO(m.DO.Assign(attrs...))
 }
 
+// Joins ...
 func (m mcpServerDo) Joins(fields ...field.RelationField) IMcpServerDo {
 	for _, _f := range fields {
 		m = *m.withDO(m.DO.Joins(_f))
@@ -388,6 +430,7 @@ func (m mcpServerDo) Joins(fields ...field.RelationField) IMcpServerDo {
 	return &m
 }
 
+// Preload ...
 func (m mcpServerDo) Preload(fields ...field.RelationField) IMcpServerDo {
 	for _, _f := range fields {
 		m = *m.withDO(m.DO.Preload(_f))
@@ -395,6 +438,7 @@ func (m mcpServerDo) Preload(fields ...field.RelationField) IMcpServerDo {
 	return &m
 }
 
+// FirstOrInit ...
 func (m mcpServerDo) FirstOrInit() (*model.MCPServer, error) {
 	if result, err := m.DO.FirstOrInit(); err != nil {
 		return nil, err
@@ -403,6 +447,7 @@ func (m mcpServerDo) FirstOrInit() (*model.MCPServer, error) {
 	}
 }
 
+// FirstOrCreate ...
 func (m mcpServerDo) FirstOrCreate() (*model.MCPServer, error) {
 	if result, err := m.DO.FirstOrCreate(); err != nil {
 		return nil, err
@@ -411,6 +456,7 @@ func (m mcpServerDo) FirstOrCreate() (*model.MCPServer, error) {
 	}
 }
 
+// FindByPage ...
 func (m mcpServerDo) FindByPage(offset int, limit int) (result []*model.MCPServer, count int64, err error) {
 	result, err = m.Offset(offset).Limit(limit).Find()
 	if err != nil {
@@ -426,6 +472,7 @@ func (m mcpServerDo) FindByPage(offset int, limit int) (result []*model.MCPServe
 	return
 }
 
+// ScanByPage ...
 func (m mcpServerDo) ScanByPage(result interface{}, offset int, limit int) (count int64, err error) {
 	count, err = m.Count()
 	if err != nil {
@@ -436,10 +483,12 @@ func (m mcpServerDo) ScanByPage(result interface{}, offset int, limit int) (coun
 	return
 }
 
+// Scan ...
 func (m mcpServerDo) Scan(result interface{}) (err error) {
 	return m.DO.Scan(result)
 }
 
+// Delete ...
 func (m mcpServerDo) Delete(models ...*model.MCPServer) (result gen.ResultInfo, err error) {
 	return m.DO.Delete(models)
 }

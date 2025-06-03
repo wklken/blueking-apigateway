@@ -33,6 +33,7 @@ import (
 	"gorm.io/plugin/dbresolver"
 )
 
+// Q ...
 var (
 	Q                                 = new(Query)
 	CoreJWT                           *coreJWT
@@ -45,6 +46,7 @@ var (
 	Stage                             *stage
 )
 
+// SetDefault ...
 func SetDefault(db *gorm.DB, opts ...gen.DOOption) {
 	*Q = *Use(db, opts...)
 	CoreJWT = &Q.CoreJWT
@@ -57,6 +59,7 @@ func SetDefault(db *gorm.DB, opts ...gen.DOOption) {
 	Stage = &Q.Stage
 }
 
+// Use ...
 func Use(db *gorm.DB, opts ...gen.DOOption) *Query {
 	return &Query{
 		db:                                db,
@@ -71,6 +74,7 @@ func Use(db *gorm.DB, opts ...gen.DOOption) *Query {
 	}
 }
 
+// Query ...
 type Query struct {
 	db *gorm.DB
 
@@ -84,6 +88,7 @@ type Query struct {
 	Stage                             stage
 }
 
+// Available ...
 func (q *Query) Available() bool { return q.db != nil }
 
 func (q *Query) clone(db *gorm.DB) *Query {
@@ -100,14 +105,17 @@ func (q *Query) clone(db *gorm.DB) *Query {
 	}
 }
 
+// ReadDB ...
 func (q *Query) ReadDB() *Query {
 	return q.ReplaceDB(q.db.Clauses(dbresolver.Read))
 }
 
+// WriteDB ...
 func (q *Query) WriteDB() *Query {
 	return q.ReplaceDB(q.db.Clauses(dbresolver.Write))
 }
 
+// ReplaceDB ...
 func (q *Query) ReplaceDB(db *gorm.DB) *Query {
 	return &Query{
 		db:                                db,
@@ -133,6 +141,7 @@ type queryCtx struct {
 	Stage                             IStageDo
 }
 
+// WithContext ...
 func (q *Query) WithContext(ctx context.Context) *queryCtx {
 	return &queryCtx{
 		CoreJWT:                           q.CoreJWT.WithContext(ctx),
@@ -146,32 +155,39 @@ func (q *Query) WithContext(ctx context.Context) *queryCtx {
 	}
 }
 
+// Transaction ...
 func (q *Query) Transaction(fc func(tx *Query) error, opts ...*sql.TxOptions) error {
 	return q.db.Transaction(func(tx *gorm.DB) error { return fc(q.clone(tx)) }, opts...)
 }
 
+// Begin ...
 func (q *Query) Begin(opts ...*sql.TxOptions) *QueryTx {
 	tx := q.db.Begin(opts...)
 	return &QueryTx{Query: q.clone(tx), Error: tx.Error}
 }
 
+// QueryTx ...
 type QueryTx struct {
 	*Query
 	Error error
 }
 
+// Commit ...
 func (q *QueryTx) Commit() error {
 	return q.db.Commit().Error
 }
 
+// Rollback ...
 func (q *QueryTx) Rollback() error {
 	return q.db.Rollback().Error
 }
 
+// SavePoint ...
 func (q *QueryTx) SavePoint(name string) error {
 	return q.db.SavePoint(name).Error
 }
 
+// RollbackTo ...
 func (q *QueryTx) RollbackTo(name string) error {
 	return q.db.RollbackTo(name).Error
 }

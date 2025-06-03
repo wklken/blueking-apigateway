@@ -68,11 +68,13 @@ type coreRelease struct {
 	fieldMap map[string]field.Expr
 }
 
+// Table ...
 func (c coreRelease) Table(newTableName string) *coreRelease {
 	c.coreReleaseDo.UseTable(newTableName)
 	return c.updateTableName(newTableName)
 }
 
+// As ...
 func (c coreRelease) As(alias string) *coreRelease {
 	c.coreReleaseDo.DO = *(c.coreReleaseDo.As(alias).(*gen.DO))
 	return c.updateTableName(alias)
@@ -90,16 +92,21 @@ func (c *coreRelease) updateTableName(table string) *coreRelease {
 	return c
 }
 
+// WithContext ...
 func (c *coreRelease) WithContext(ctx context.Context) ICoreReleaseDo {
 	return c.coreReleaseDo.WithContext(ctx)
 }
 
+// TableName ...
 func (c coreRelease) TableName() string { return c.coreReleaseDo.TableName() }
 
+// Alias ...
 func (c coreRelease) Alias() string { return c.coreReleaseDo.Alias() }
 
+// Columns ...
 func (c coreRelease) Columns(cols ...field.Expr) gen.Columns { return c.coreReleaseDo.Columns(cols...) }
 
+// GetFieldByName ...
 func (c *coreRelease) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 	_f, ok := c.fieldMap[fieldName]
 	if !ok || _f == nil {
@@ -129,6 +136,7 @@ func (c coreRelease) replaceDB(db *gorm.DB) coreRelease {
 
 type coreReleaseDo struct{ gen.DO }
 
+// ICoreReleaseDo ...
 type ICoreReleaseDo interface {
 	gen.SubQuery
 	Debug() ICoreReleaseDo
@@ -192,98 +200,122 @@ type ICoreReleaseDo interface {
 	schema.Tabler
 }
 
+// Debug ...
 func (c coreReleaseDo) Debug() ICoreReleaseDo {
 	return c.withDO(c.DO.Debug())
 }
 
+// WithContext ...
 func (c coreReleaseDo) WithContext(ctx context.Context) ICoreReleaseDo {
 	return c.withDO(c.DO.WithContext(ctx))
 }
 
+// ReadDB ...
 func (c coreReleaseDo) ReadDB() ICoreReleaseDo {
 	return c.Clauses(dbresolver.Read)
 }
 
+// WriteDB ...
 func (c coreReleaseDo) WriteDB() ICoreReleaseDo {
 	return c.Clauses(dbresolver.Write)
 }
 
+// Session ...
 func (c coreReleaseDo) Session(config *gorm.Session) ICoreReleaseDo {
 	return c.withDO(c.DO.Session(config))
 }
 
+// Clauses ...
 func (c coreReleaseDo) Clauses(conds ...clause.Expression) ICoreReleaseDo {
 	return c.withDO(c.DO.Clauses(conds...))
 }
 
+// Returning ...
 func (c coreReleaseDo) Returning(value interface{}, columns ...string) ICoreReleaseDo {
 	return c.withDO(c.DO.Returning(value, columns...))
 }
 
+// Not ...
 func (c coreReleaseDo) Not(conds ...gen.Condition) ICoreReleaseDo {
 	return c.withDO(c.DO.Not(conds...))
 }
 
+// Or ...
 func (c coreReleaseDo) Or(conds ...gen.Condition) ICoreReleaseDo {
 	return c.withDO(c.DO.Or(conds...))
 }
 
+// Select ...
 func (c coreReleaseDo) Select(conds ...field.Expr) ICoreReleaseDo {
 	return c.withDO(c.DO.Select(conds...))
 }
 
+// Where ...
 func (c coreReleaseDo) Where(conds ...gen.Condition) ICoreReleaseDo {
 	return c.withDO(c.DO.Where(conds...))
 }
 
+// Order ...
 func (c coreReleaseDo) Order(conds ...field.Expr) ICoreReleaseDo {
 	return c.withDO(c.DO.Order(conds...))
 }
 
+// Distinct ...
 func (c coreReleaseDo) Distinct(cols ...field.Expr) ICoreReleaseDo {
 	return c.withDO(c.DO.Distinct(cols...))
 }
 
+// Omit ...
 func (c coreReleaseDo) Omit(cols ...field.Expr) ICoreReleaseDo {
 	return c.withDO(c.DO.Omit(cols...))
 }
 
+// Join ...
 func (c coreReleaseDo) Join(table schema.Tabler, on ...field.Expr) ICoreReleaseDo {
 	return c.withDO(c.DO.Join(table, on...))
 }
 
+// LeftJoin ...
 func (c coreReleaseDo) LeftJoin(table schema.Tabler, on ...field.Expr) ICoreReleaseDo {
 	return c.withDO(c.DO.LeftJoin(table, on...))
 }
 
+// RightJoin ...
 func (c coreReleaseDo) RightJoin(table schema.Tabler, on ...field.Expr) ICoreReleaseDo {
 	return c.withDO(c.DO.RightJoin(table, on...))
 }
 
+// Group ...
 func (c coreReleaseDo) Group(cols ...field.Expr) ICoreReleaseDo {
 	return c.withDO(c.DO.Group(cols...))
 }
 
+// Having ...
 func (c coreReleaseDo) Having(conds ...gen.Condition) ICoreReleaseDo {
 	return c.withDO(c.DO.Having(conds...))
 }
 
+// Limit ...
 func (c coreReleaseDo) Limit(limit int) ICoreReleaseDo {
 	return c.withDO(c.DO.Limit(limit))
 }
 
+// Offset ...
 func (c coreReleaseDo) Offset(offset int) ICoreReleaseDo {
 	return c.withDO(c.DO.Offset(offset))
 }
 
+// Scopes ...
 func (c coreReleaseDo) Scopes(funcs ...func(gen.Dao) gen.Dao) ICoreReleaseDo {
 	return c.withDO(c.DO.Scopes(funcs...))
 }
 
+// Unscoped ...
 func (c coreReleaseDo) Unscoped() ICoreReleaseDo {
 	return c.withDO(c.DO.Unscoped())
 }
 
+// Create ...
 func (c coreReleaseDo) Create(values ...*model.Release) error {
 	if len(values) == 0 {
 		return nil
@@ -291,6 +323,7 @@ func (c coreReleaseDo) Create(values ...*model.Release) error {
 	return c.DO.Create(values)
 }
 
+// CreateInBatches ...
 func (c coreReleaseDo) CreateInBatches(values []*model.Release, batchSize int) error {
 	return c.DO.CreateInBatches(values, batchSize)
 }
@@ -304,6 +337,7 @@ func (c coreReleaseDo) Save(values ...*model.Release) error {
 	return c.DO.Save(values)
 }
 
+// First ...
 func (c coreReleaseDo) First() (*model.Release, error) {
 	if result, err := c.DO.First(); err != nil {
 		return nil, err
@@ -312,6 +346,7 @@ func (c coreReleaseDo) First() (*model.Release, error) {
 	}
 }
 
+// Take ...
 func (c coreReleaseDo) Take() (*model.Release, error) {
 	if result, err := c.DO.Take(); err != nil {
 		return nil, err
@@ -320,6 +355,7 @@ func (c coreReleaseDo) Take() (*model.Release, error) {
 	}
 }
 
+// Last ...
 func (c coreReleaseDo) Last() (*model.Release, error) {
 	if result, err := c.DO.Last(); err != nil {
 		return nil, err
@@ -328,11 +364,13 @@ func (c coreReleaseDo) Last() (*model.Release, error) {
 	}
 }
 
+// Find ...
 func (c coreReleaseDo) Find() ([]*model.Release, error) {
 	result, err := c.DO.Find()
 	return result.([]*model.Release), err
 }
 
+// FindInBatch ...
 func (c coreReleaseDo) FindInBatch(
 	batchSize int,
 	fc func(tx gen.Dao, batch int) error,
@@ -345,6 +383,7 @@ func (c coreReleaseDo) FindInBatch(
 	return results, err
 }
 
+// FindInBatches ...
 func (c coreReleaseDo) FindInBatches(
 	result *[]*model.Release,
 	batchSize int,
@@ -353,14 +392,17 @@ func (c coreReleaseDo) FindInBatches(
 	return c.DO.FindInBatches(result, batchSize, fc)
 }
 
+// Attrs ...
 func (c coreReleaseDo) Attrs(attrs ...field.AssignExpr) ICoreReleaseDo {
 	return c.withDO(c.DO.Attrs(attrs...))
 }
 
+// Assign ...
 func (c coreReleaseDo) Assign(attrs ...field.AssignExpr) ICoreReleaseDo {
 	return c.withDO(c.DO.Assign(attrs...))
 }
 
+// Joins ...
 func (c coreReleaseDo) Joins(fields ...field.RelationField) ICoreReleaseDo {
 	for _, _f := range fields {
 		c = *c.withDO(c.DO.Joins(_f))
@@ -368,6 +410,7 @@ func (c coreReleaseDo) Joins(fields ...field.RelationField) ICoreReleaseDo {
 	return &c
 }
 
+// Preload ...
 func (c coreReleaseDo) Preload(fields ...field.RelationField) ICoreReleaseDo {
 	for _, _f := range fields {
 		c = *c.withDO(c.DO.Preload(_f))
@@ -375,6 +418,7 @@ func (c coreReleaseDo) Preload(fields ...field.RelationField) ICoreReleaseDo {
 	return &c
 }
 
+// FirstOrInit ...
 func (c coreReleaseDo) FirstOrInit() (*model.Release, error) {
 	if result, err := c.DO.FirstOrInit(); err != nil {
 		return nil, err
@@ -383,6 +427,7 @@ func (c coreReleaseDo) FirstOrInit() (*model.Release, error) {
 	}
 }
 
+// FirstOrCreate ...
 func (c coreReleaseDo) FirstOrCreate() (*model.Release, error) {
 	if result, err := c.DO.FirstOrCreate(); err != nil {
 		return nil, err
@@ -391,6 +436,7 @@ func (c coreReleaseDo) FirstOrCreate() (*model.Release, error) {
 	}
 }
 
+// FindByPage ...
 func (c coreReleaseDo) FindByPage(offset int, limit int) (result []*model.Release, count int64, err error) {
 	result, err = c.Offset(offset).Limit(limit).Find()
 	if err != nil {
@@ -406,6 +452,7 @@ func (c coreReleaseDo) FindByPage(offset int, limit int) (result []*model.Releas
 	return
 }
 
+// ScanByPage ...
 func (c coreReleaseDo) ScanByPage(result interface{}, offset int, limit int) (count int64, err error) {
 	count, err = c.Count()
 	if err != nil {
@@ -416,10 +463,12 @@ func (c coreReleaseDo) ScanByPage(result interface{}, offset int, limit int) (co
 	return
 }
 
+// Scan ...
 func (c coreReleaseDo) Scan(result interface{}) (err error) {
 	return c.DO.Scan(result)
 }
 
+// Delete ...
 func (c coreReleaseDo) Delete(models ...*model.Release) (result gen.ResultInfo, err error) {
 	return c.DO.Delete(models)
 }

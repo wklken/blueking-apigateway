@@ -64,11 +64,13 @@ type gateway struct {
 	fieldMap map[string]field.Expr
 }
 
+// Table ...
 func (g gateway) Table(newTableName string) *gateway {
 	g.gatewayDo.UseTable(newTableName)
 	return g.updateTableName(newTableName)
 }
 
+// As ...
 func (g gateway) As(alias string) *gateway {
 	g.gatewayDo.DO = *(g.gatewayDo.As(alias).(*gen.DO))
 	return g.updateTableName(alias)
@@ -84,14 +86,19 @@ func (g *gateway) updateTableName(table string) *gateway {
 	return g
 }
 
+// WithContext ...
 func (g *gateway) WithContext(ctx context.Context) IGatewayDo { return g.gatewayDo.WithContext(ctx) }
 
+// TableName ...
 func (g gateway) TableName() string { return g.gatewayDo.TableName() }
 
+// Alias ...
 func (g gateway) Alias() string { return g.gatewayDo.Alias() }
 
+// Columns ...
 func (g gateway) Columns(cols ...field.Expr) gen.Columns { return g.gatewayDo.Columns(cols...) }
 
+// GetFieldByName ...
 func (g *gateway) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 	_f, ok := g.fieldMap[fieldName]
 	if !ok || _f == nil {
@@ -119,6 +126,7 @@ func (g gateway) replaceDB(db *gorm.DB) gateway {
 
 type gatewayDo struct{ gen.DO }
 
+// IGatewayDo ...
 type IGatewayDo interface {
 	gen.SubQuery
 	Debug() IGatewayDo
@@ -182,98 +190,122 @@ type IGatewayDo interface {
 	schema.Tabler
 }
 
+// Debug ...
 func (g gatewayDo) Debug() IGatewayDo {
 	return g.withDO(g.DO.Debug())
 }
 
+// WithContext ...
 func (g gatewayDo) WithContext(ctx context.Context) IGatewayDo {
 	return g.withDO(g.DO.WithContext(ctx))
 }
 
+// ReadDB ...
 func (g gatewayDo) ReadDB() IGatewayDo {
 	return g.Clauses(dbresolver.Read)
 }
 
+// WriteDB ...
 func (g gatewayDo) WriteDB() IGatewayDo {
 	return g.Clauses(dbresolver.Write)
 }
 
+// Session ...
 func (g gatewayDo) Session(config *gorm.Session) IGatewayDo {
 	return g.withDO(g.DO.Session(config))
 }
 
+// Clauses ...
 func (g gatewayDo) Clauses(conds ...clause.Expression) IGatewayDo {
 	return g.withDO(g.DO.Clauses(conds...))
 }
 
+// Returning ...
 func (g gatewayDo) Returning(value interface{}, columns ...string) IGatewayDo {
 	return g.withDO(g.DO.Returning(value, columns...))
 }
 
+// Not ...
 func (g gatewayDo) Not(conds ...gen.Condition) IGatewayDo {
 	return g.withDO(g.DO.Not(conds...))
 }
 
+// Or ...
 func (g gatewayDo) Or(conds ...gen.Condition) IGatewayDo {
 	return g.withDO(g.DO.Or(conds...))
 }
 
+// Select ...
 func (g gatewayDo) Select(conds ...field.Expr) IGatewayDo {
 	return g.withDO(g.DO.Select(conds...))
 }
 
+// Where ...
 func (g gatewayDo) Where(conds ...gen.Condition) IGatewayDo {
 	return g.withDO(g.DO.Where(conds...))
 }
 
+// Order ...
 func (g gatewayDo) Order(conds ...field.Expr) IGatewayDo {
 	return g.withDO(g.DO.Order(conds...))
 }
 
+// Distinct ...
 func (g gatewayDo) Distinct(cols ...field.Expr) IGatewayDo {
 	return g.withDO(g.DO.Distinct(cols...))
 }
 
+// Omit ...
 func (g gatewayDo) Omit(cols ...field.Expr) IGatewayDo {
 	return g.withDO(g.DO.Omit(cols...))
 }
 
+// Join ...
 func (g gatewayDo) Join(table schema.Tabler, on ...field.Expr) IGatewayDo {
 	return g.withDO(g.DO.Join(table, on...))
 }
 
+// LeftJoin ...
 func (g gatewayDo) LeftJoin(table schema.Tabler, on ...field.Expr) IGatewayDo {
 	return g.withDO(g.DO.LeftJoin(table, on...))
 }
 
+// RightJoin ...
 func (g gatewayDo) RightJoin(table schema.Tabler, on ...field.Expr) IGatewayDo {
 	return g.withDO(g.DO.RightJoin(table, on...))
 }
 
+// Group ...
 func (g gatewayDo) Group(cols ...field.Expr) IGatewayDo {
 	return g.withDO(g.DO.Group(cols...))
 }
 
+// Having ...
 func (g gatewayDo) Having(conds ...gen.Condition) IGatewayDo {
 	return g.withDO(g.DO.Having(conds...))
 }
 
+// Limit ...
 func (g gatewayDo) Limit(limit int) IGatewayDo {
 	return g.withDO(g.DO.Limit(limit))
 }
 
+// Offset ...
 func (g gatewayDo) Offset(offset int) IGatewayDo {
 	return g.withDO(g.DO.Offset(offset))
 }
 
+// Scopes ...
 func (g gatewayDo) Scopes(funcs ...func(gen.Dao) gen.Dao) IGatewayDo {
 	return g.withDO(g.DO.Scopes(funcs...))
 }
 
+// Unscoped ...
 func (g gatewayDo) Unscoped() IGatewayDo {
 	return g.withDO(g.DO.Unscoped())
 }
 
+// Create ...
 func (g gatewayDo) Create(values ...*model.Gateway) error {
 	if len(values) == 0 {
 		return nil
@@ -281,6 +313,7 @@ func (g gatewayDo) Create(values ...*model.Gateway) error {
 	return g.DO.Create(values)
 }
 
+// CreateInBatches ...
 func (g gatewayDo) CreateInBatches(values []*model.Gateway, batchSize int) error {
 	return g.DO.CreateInBatches(values, batchSize)
 }
@@ -294,6 +327,7 @@ func (g gatewayDo) Save(values ...*model.Gateway) error {
 	return g.DO.Save(values)
 }
 
+// First ...
 func (g gatewayDo) First() (*model.Gateway, error) {
 	if result, err := g.DO.First(); err != nil {
 		return nil, err
@@ -302,6 +336,7 @@ func (g gatewayDo) First() (*model.Gateway, error) {
 	}
 }
 
+// Take ...
 func (g gatewayDo) Take() (*model.Gateway, error) {
 	if result, err := g.DO.Take(); err != nil {
 		return nil, err
@@ -310,6 +345,7 @@ func (g gatewayDo) Take() (*model.Gateway, error) {
 	}
 }
 
+// Last ...
 func (g gatewayDo) Last() (*model.Gateway, error) {
 	if result, err := g.DO.Last(); err != nil {
 		return nil, err
@@ -318,11 +354,13 @@ func (g gatewayDo) Last() (*model.Gateway, error) {
 	}
 }
 
+// Find ...
 func (g gatewayDo) Find() ([]*model.Gateway, error) {
 	result, err := g.DO.Find()
 	return result.([]*model.Gateway), err
 }
 
+// FindInBatch ...
 func (g gatewayDo) FindInBatch(
 	batchSize int,
 	fc func(tx gen.Dao, batch int) error,
@@ -335,18 +373,22 @@ func (g gatewayDo) FindInBatch(
 	return results, err
 }
 
+// FindInBatches ...
 func (g gatewayDo) FindInBatches(result *[]*model.Gateway, batchSize int, fc func(tx gen.Dao, batch int) error) error {
 	return g.DO.FindInBatches(result, batchSize, fc)
 }
 
+// Attrs ...
 func (g gatewayDo) Attrs(attrs ...field.AssignExpr) IGatewayDo {
 	return g.withDO(g.DO.Attrs(attrs...))
 }
 
+// Assign ...
 func (g gatewayDo) Assign(attrs ...field.AssignExpr) IGatewayDo {
 	return g.withDO(g.DO.Assign(attrs...))
 }
 
+// Joins ...
 func (g gatewayDo) Joins(fields ...field.RelationField) IGatewayDo {
 	for _, _f := range fields {
 		g = *g.withDO(g.DO.Joins(_f))
@@ -354,6 +396,7 @@ func (g gatewayDo) Joins(fields ...field.RelationField) IGatewayDo {
 	return &g
 }
 
+// Preload ...
 func (g gatewayDo) Preload(fields ...field.RelationField) IGatewayDo {
 	for _, _f := range fields {
 		g = *g.withDO(g.DO.Preload(_f))
@@ -361,6 +404,7 @@ func (g gatewayDo) Preload(fields ...field.RelationField) IGatewayDo {
 	return &g
 }
 
+// FirstOrInit ...
 func (g gatewayDo) FirstOrInit() (*model.Gateway, error) {
 	if result, err := g.DO.FirstOrInit(); err != nil {
 		return nil, err
@@ -369,6 +413,7 @@ func (g gatewayDo) FirstOrInit() (*model.Gateway, error) {
 	}
 }
 
+// FirstOrCreate ...
 func (g gatewayDo) FirstOrCreate() (*model.Gateway, error) {
 	if result, err := g.DO.FirstOrCreate(); err != nil {
 		return nil, err
@@ -377,6 +422,7 @@ func (g gatewayDo) FirstOrCreate() (*model.Gateway, error) {
 	}
 }
 
+// FindByPage ...
 func (g gatewayDo) FindByPage(offset int, limit int) (result []*model.Gateway, count int64, err error) {
 	result, err = g.Offset(offset).Limit(limit).Find()
 	if err != nil {
@@ -392,6 +438,7 @@ func (g gatewayDo) FindByPage(offset int, limit int) (result []*model.Gateway, c
 	return
 }
 
+// ScanByPage ...
 func (g gatewayDo) ScanByPage(result interface{}, offset int, limit int) (count int64, err error) {
 	count, err = g.Count()
 	if err != nil {
@@ -402,10 +449,12 @@ func (g gatewayDo) ScanByPage(result interface{}, offset int, limit int) (count 
 	return
 }
 
+// Scan ...
 func (g gatewayDo) Scan(result interface{}) (err error) {
 	return g.DO.Scan(result)
 }
 
+// Delete ...
 func (g gatewayDo) Delete(models ...*model.Gateway) (result gen.ResultInfo, err error) {
 	return g.DO.Delete(models)
 }

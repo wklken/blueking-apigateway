@@ -64,11 +64,13 @@ type stage struct {
 	fieldMap map[string]field.Expr
 }
 
+// Table ...
 func (s stage) Table(newTableName string) *stage {
 	s.stageDo.UseTable(newTableName)
 	return s.updateTableName(newTableName)
 }
 
+// As ...
 func (s stage) As(alias string) *stage {
 	s.stageDo.DO = *(s.stageDo.As(alias).(*gen.DO))
 	return s.updateTableName(alias)
@@ -84,14 +86,19 @@ func (s *stage) updateTableName(table string) *stage {
 	return s
 }
 
+// WithContext ...
 func (s *stage) WithContext(ctx context.Context) IStageDo { return s.stageDo.WithContext(ctx) }
 
+// TableName ...
 func (s stage) TableName() string { return s.stageDo.TableName() }
 
+// Alias ...
 func (s stage) Alias() string { return s.stageDo.Alias() }
 
+// Columns ...
 func (s stage) Columns(cols ...field.Expr) gen.Columns { return s.stageDo.Columns(cols...) }
 
+// GetFieldByName ...
 func (s *stage) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 	_f, ok := s.fieldMap[fieldName]
 	if !ok || _f == nil {
@@ -119,6 +126,7 @@ func (s stage) replaceDB(db *gorm.DB) stage {
 
 type stageDo struct{ gen.DO }
 
+// IStageDo ...
 type IStageDo interface {
 	gen.SubQuery
 	Debug() IStageDo
@@ -182,98 +190,122 @@ type IStageDo interface {
 	schema.Tabler
 }
 
+// Debug ...
 func (s stageDo) Debug() IStageDo {
 	return s.withDO(s.DO.Debug())
 }
 
+// WithContext ...
 func (s stageDo) WithContext(ctx context.Context) IStageDo {
 	return s.withDO(s.DO.WithContext(ctx))
 }
 
+// ReadDB ...
 func (s stageDo) ReadDB() IStageDo {
 	return s.Clauses(dbresolver.Read)
 }
 
+// WriteDB ...
 func (s stageDo) WriteDB() IStageDo {
 	return s.Clauses(dbresolver.Write)
 }
 
+// Session ...
 func (s stageDo) Session(config *gorm.Session) IStageDo {
 	return s.withDO(s.DO.Session(config))
 }
 
+// Clauses ...
 func (s stageDo) Clauses(conds ...clause.Expression) IStageDo {
 	return s.withDO(s.DO.Clauses(conds...))
 }
 
+// Returning ...
 func (s stageDo) Returning(value interface{}, columns ...string) IStageDo {
 	return s.withDO(s.DO.Returning(value, columns...))
 }
 
+// Not ...
 func (s stageDo) Not(conds ...gen.Condition) IStageDo {
 	return s.withDO(s.DO.Not(conds...))
 }
 
+// Or ...
 func (s stageDo) Or(conds ...gen.Condition) IStageDo {
 	return s.withDO(s.DO.Or(conds...))
 }
 
+// Select ...
 func (s stageDo) Select(conds ...field.Expr) IStageDo {
 	return s.withDO(s.DO.Select(conds...))
 }
 
+// Where ...
 func (s stageDo) Where(conds ...gen.Condition) IStageDo {
 	return s.withDO(s.DO.Where(conds...))
 }
 
+// Order ...
 func (s stageDo) Order(conds ...field.Expr) IStageDo {
 	return s.withDO(s.DO.Order(conds...))
 }
 
+// Distinct ...
 func (s stageDo) Distinct(cols ...field.Expr) IStageDo {
 	return s.withDO(s.DO.Distinct(cols...))
 }
 
+// Omit ...
 func (s stageDo) Omit(cols ...field.Expr) IStageDo {
 	return s.withDO(s.DO.Omit(cols...))
 }
 
+// Join ...
 func (s stageDo) Join(table schema.Tabler, on ...field.Expr) IStageDo {
 	return s.withDO(s.DO.Join(table, on...))
 }
 
+// LeftJoin ...
 func (s stageDo) LeftJoin(table schema.Tabler, on ...field.Expr) IStageDo {
 	return s.withDO(s.DO.LeftJoin(table, on...))
 }
 
+// RightJoin ...
 func (s stageDo) RightJoin(table schema.Tabler, on ...field.Expr) IStageDo {
 	return s.withDO(s.DO.RightJoin(table, on...))
 }
 
+// Group ...
 func (s stageDo) Group(cols ...field.Expr) IStageDo {
 	return s.withDO(s.DO.Group(cols...))
 }
 
+// Having ...
 func (s stageDo) Having(conds ...gen.Condition) IStageDo {
 	return s.withDO(s.DO.Having(conds...))
 }
 
+// Limit ...
 func (s stageDo) Limit(limit int) IStageDo {
 	return s.withDO(s.DO.Limit(limit))
 }
 
+// Offset ...
 func (s stageDo) Offset(offset int) IStageDo {
 	return s.withDO(s.DO.Offset(offset))
 }
 
+// Scopes ...
 func (s stageDo) Scopes(funcs ...func(gen.Dao) gen.Dao) IStageDo {
 	return s.withDO(s.DO.Scopes(funcs...))
 }
 
+// Unscoped ...
 func (s stageDo) Unscoped() IStageDo {
 	return s.withDO(s.DO.Unscoped())
 }
 
+// Create ...
 func (s stageDo) Create(values ...*model.Stage) error {
 	if len(values) == 0 {
 		return nil
@@ -281,6 +313,7 @@ func (s stageDo) Create(values ...*model.Stage) error {
 	return s.DO.Create(values)
 }
 
+// CreateInBatches ...
 func (s stageDo) CreateInBatches(values []*model.Stage, batchSize int) error {
 	return s.DO.CreateInBatches(values, batchSize)
 }
@@ -294,6 +327,7 @@ func (s stageDo) Save(values ...*model.Stage) error {
 	return s.DO.Save(values)
 }
 
+// First ...
 func (s stageDo) First() (*model.Stage, error) {
 	if result, err := s.DO.First(); err != nil {
 		return nil, err
@@ -302,6 +336,7 @@ func (s stageDo) First() (*model.Stage, error) {
 	}
 }
 
+// Take ...
 func (s stageDo) Take() (*model.Stage, error) {
 	if result, err := s.DO.Take(); err != nil {
 		return nil, err
@@ -310,6 +345,7 @@ func (s stageDo) Take() (*model.Stage, error) {
 	}
 }
 
+// Last ...
 func (s stageDo) Last() (*model.Stage, error) {
 	if result, err := s.DO.Last(); err != nil {
 		return nil, err
@@ -318,11 +354,13 @@ func (s stageDo) Last() (*model.Stage, error) {
 	}
 }
 
+// Find ...
 func (s stageDo) Find() ([]*model.Stage, error) {
 	result, err := s.DO.Find()
 	return result.([]*model.Stage), err
 }
 
+// FindInBatch ...
 func (s stageDo) FindInBatch(batchSize int, fc func(tx gen.Dao, batch int) error) (results []*model.Stage, err error) {
 	buf := make([]*model.Stage, 0, batchSize)
 	err = s.DO.FindInBatches(&buf, batchSize, func(tx gen.Dao, batch int) error {
@@ -332,18 +370,22 @@ func (s stageDo) FindInBatch(batchSize int, fc func(tx gen.Dao, batch int) error
 	return results, err
 }
 
+// FindInBatches ...
 func (s stageDo) FindInBatches(result *[]*model.Stage, batchSize int, fc func(tx gen.Dao, batch int) error) error {
 	return s.DO.FindInBatches(result, batchSize, fc)
 }
 
+// Attrs ...
 func (s stageDo) Attrs(attrs ...field.AssignExpr) IStageDo {
 	return s.withDO(s.DO.Attrs(attrs...))
 }
 
+// Assign ...
 func (s stageDo) Assign(attrs ...field.AssignExpr) IStageDo {
 	return s.withDO(s.DO.Assign(attrs...))
 }
 
+// Joins ...
 func (s stageDo) Joins(fields ...field.RelationField) IStageDo {
 	for _, _f := range fields {
 		s = *s.withDO(s.DO.Joins(_f))
@@ -351,6 +393,7 @@ func (s stageDo) Joins(fields ...field.RelationField) IStageDo {
 	return &s
 }
 
+// Preload ...
 func (s stageDo) Preload(fields ...field.RelationField) IStageDo {
 	for _, _f := range fields {
 		s = *s.withDO(s.DO.Preload(_f))
@@ -358,6 +401,7 @@ func (s stageDo) Preload(fields ...field.RelationField) IStageDo {
 	return &s
 }
 
+// FirstOrInit ...
 func (s stageDo) FirstOrInit() (*model.Stage, error) {
 	if result, err := s.DO.FirstOrInit(); err != nil {
 		return nil, err
@@ -366,6 +410,7 @@ func (s stageDo) FirstOrInit() (*model.Stage, error) {
 	}
 }
 
+// FirstOrCreate ...
 func (s stageDo) FirstOrCreate() (*model.Stage, error) {
 	if result, err := s.DO.FirstOrCreate(); err != nil {
 		return nil, err
@@ -374,6 +419,7 @@ func (s stageDo) FirstOrCreate() (*model.Stage, error) {
 	}
 }
 
+// FindByPage ...
 func (s stageDo) FindByPage(offset int, limit int) (result []*model.Stage, count int64, err error) {
 	result, err = s.Offset(offset).Limit(limit).Find()
 	if err != nil {
@@ -389,6 +435,7 @@ func (s stageDo) FindByPage(offset int, limit int) (result []*model.Stage, count
 	return
 }
 
+// ScanByPage ...
 func (s stageDo) ScanByPage(result interface{}, offset int, limit int) (count int64, err error) {
 	count, err = s.Count()
 	if err != nil {
@@ -399,10 +446,12 @@ func (s stageDo) ScanByPage(result interface{}, offset int, limit int) (count in
 	return
 }
 
+// Scan ...
 func (s stageDo) Scan(result interface{}) (err error) {
 	return s.DO.Scan(result)
 }
 
+// Delete ...
 func (s stageDo) Delete(models ...*model.Stage) (result gen.ResultInfo, err error) {
 	return s.DO.Delete(models)
 }

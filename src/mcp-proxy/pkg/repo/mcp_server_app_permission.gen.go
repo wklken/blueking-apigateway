@@ -70,11 +70,13 @@ type mcpServerAppPermission struct {
 	fieldMap map[string]field.Expr
 }
 
+// Table ...
 func (m mcpServerAppPermission) Table(newTableName string) *mcpServerAppPermission {
 	m.mcpServerAppPermissionDo.UseTable(newTableName)
 	return m.updateTableName(newTableName)
 }
 
+// As ...
 func (m mcpServerAppPermission) As(alias string) *mcpServerAppPermission {
 	m.mcpServerAppPermissionDo.DO = *(m.mcpServerAppPermissionDo.As(alias).(*gen.DO))
 	return m.updateTableName(alias)
@@ -93,18 +95,23 @@ func (m *mcpServerAppPermission) updateTableName(table string) *mcpServerAppPerm
 	return m
 }
 
+// WithContext ...
 func (m *mcpServerAppPermission) WithContext(ctx context.Context) IMcpServerAppPermissionDo {
 	return m.mcpServerAppPermissionDo.WithContext(ctx)
 }
 
+// TableName ...
 func (m mcpServerAppPermission) TableName() string { return m.mcpServerAppPermissionDo.TableName() }
 
+// Alias ...
 func (m mcpServerAppPermission) Alias() string { return m.mcpServerAppPermissionDo.Alias() }
 
+// Columns ...
 func (m mcpServerAppPermission) Columns(cols ...field.Expr) gen.Columns {
 	return m.mcpServerAppPermissionDo.Columns(cols...)
 }
 
+// GetFieldByName ...
 func (m *mcpServerAppPermission) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 	_f, ok := m.fieldMap[fieldName]
 	if !ok || _f == nil {
@@ -135,6 +142,7 @@ func (m mcpServerAppPermission) replaceDB(db *gorm.DB) mcpServerAppPermission {
 
 type mcpServerAppPermissionDo struct{ gen.DO }
 
+// IMcpServerAppPermissionDo ...
 type IMcpServerAppPermissionDo interface {
 	gen.SubQuery
 	Debug() IMcpServerAppPermissionDo
@@ -201,98 +209,122 @@ type IMcpServerAppPermissionDo interface {
 	schema.Tabler
 }
 
+// Debug ...
 func (m mcpServerAppPermissionDo) Debug() IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Debug())
 }
 
+// WithContext ...
 func (m mcpServerAppPermissionDo) WithContext(ctx context.Context) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.WithContext(ctx))
 }
 
+// ReadDB ...
 func (m mcpServerAppPermissionDo) ReadDB() IMcpServerAppPermissionDo {
 	return m.Clauses(dbresolver.Read)
 }
 
+// WriteDB ...
 func (m mcpServerAppPermissionDo) WriteDB() IMcpServerAppPermissionDo {
 	return m.Clauses(dbresolver.Write)
 }
 
+// Session ...
 func (m mcpServerAppPermissionDo) Session(config *gorm.Session) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Session(config))
 }
 
+// Clauses ...
 func (m mcpServerAppPermissionDo) Clauses(conds ...clause.Expression) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Clauses(conds...))
 }
 
+// Returning ...
 func (m mcpServerAppPermissionDo) Returning(value interface{}, columns ...string) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Returning(value, columns...))
 }
 
+// Not ...
 func (m mcpServerAppPermissionDo) Not(conds ...gen.Condition) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Not(conds...))
 }
 
+// Or ...
 func (m mcpServerAppPermissionDo) Or(conds ...gen.Condition) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Or(conds...))
 }
 
+// Select ...
 func (m mcpServerAppPermissionDo) Select(conds ...field.Expr) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Select(conds...))
 }
 
+// Where ...
 func (m mcpServerAppPermissionDo) Where(conds ...gen.Condition) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Where(conds...))
 }
 
+// Order ...
 func (m mcpServerAppPermissionDo) Order(conds ...field.Expr) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Order(conds...))
 }
 
+// Distinct ...
 func (m mcpServerAppPermissionDo) Distinct(cols ...field.Expr) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Distinct(cols...))
 }
 
+// Omit ...
 func (m mcpServerAppPermissionDo) Omit(cols ...field.Expr) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Omit(cols...))
 }
 
+// Join ...
 func (m mcpServerAppPermissionDo) Join(table schema.Tabler, on ...field.Expr) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Join(table, on...))
 }
 
+// LeftJoin ...
 func (m mcpServerAppPermissionDo) LeftJoin(table schema.Tabler, on ...field.Expr) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.LeftJoin(table, on...))
 }
 
+// RightJoin ...
 func (m mcpServerAppPermissionDo) RightJoin(table schema.Tabler, on ...field.Expr) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.RightJoin(table, on...))
 }
 
+// Group ...
 func (m mcpServerAppPermissionDo) Group(cols ...field.Expr) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Group(cols...))
 }
 
+// Having ...
 func (m mcpServerAppPermissionDo) Having(conds ...gen.Condition) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Having(conds...))
 }
 
+// Limit ...
 func (m mcpServerAppPermissionDo) Limit(limit int) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Limit(limit))
 }
 
+// Offset ...
 func (m mcpServerAppPermissionDo) Offset(offset int) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Offset(offset))
 }
 
+// Scopes ...
 func (m mcpServerAppPermissionDo) Scopes(funcs ...func(gen.Dao) gen.Dao) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Scopes(funcs...))
 }
 
+// Unscoped ...
 func (m mcpServerAppPermissionDo) Unscoped() IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Unscoped())
 }
 
+// Create ...
 func (m mcpServerAppPermissionDo) Create(values ...*model.MCPServerAppPermission) error {
 	if len(values) == 0 {
 		return nil
@@ -300,6 +332,7 @@ func (m mcpServerAppPermissionDo) Create(values ...*model.MCPServerAppPermission
 	return m.DO.Create(values)
 }
 
+// CreateInBatches ...
 func (m mcpServerAppPermissionDo) CreateInBatches(values []*model.MCPServerAppPermission, batchSize int) error {
 	return m.DO.CreateInBatches(values, batchSize)
 }
@@ -313,6 +346,7 @@ func (m mcpServerAppPermissionDo) Save(values ...*model.MCPServerAppPermission) 
 	return m.DO.Save(values)
 }
 
+// First ...
 func (m mcpServerAppPermissionDo) First() (*model.MCPServerAppPermission, error) {
 	if result, err := m.DO.First(); err != nil {
 		return nil, err
@@ -321,6 +355,7 @@ func (m mcpServerAppPermissionDo) First() (*model.MCPServerAppPermission, error)
 	}
 }
 
+// Take ...
 func (m mcpServerAppPermissionDo) Take() (*model.MCPServerAppPermission, error) {
 	if result, err := m.DO.Take(); err != nil {
 		return nil, err
@@ -329,6 +364,7 @@ func (m mcpServerAppPermissionDo) Take() (*model.MCPServerAppPermission, error) 
 	}
 }
 
+// Last ...
 func (m mcpServerAppPermissionDo) Last() (*model.MCPServerAppPermission, error) {
 	if result, err := m.DO.Last(); err != nil {
 		return nil, err
@@ -337,11 +373,13 @@ func (m mcpServerAppPermissionDo) Last() (*model.MCPServerAppPermission, error) 
 	}
 }
 
+// Find ...
 func (m mcpServerAppPermissionDo) Find() ([]*model.MCPServerAppPermission, error) {
 	result, err := m.DO.Find()
 	return result.([]*model.MCPServerAppPermission), err
 }
 
+// FindInBatch ...
 func (m mcpServerAppPermissionDo) FindInBatch(
 	batchSize int,
 	fc func(tx gen.Dao, batch int) error,
@@ -354,6 +392,7 @@ func (m mcpServerAppPermissionDo) FindInBatch(
 	return results, err
 }
 
+// FindInBatches ...
 func (m mcpServerAppPermissionDo) FindInBatches(
 	result *[]*model.MCPServerAppPermission,
 	batchSize int,
@@ -362,14 +401,17 @@ func (m mcpServerAppPermissionDo) FindInBatches(
 	return m.DO.FindInBatches(result, batchSize, fc)
 }
 
+// Attrs ...
 func (m mcpServerAppPermissionDo) Attrs(attrs ...field.AssignExpr) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Attrs(attrs...))
 }
 
+// Assign ...
 func (m mcpServerAppPermissionDo) Assign(attrs ...field.AssignExpr) IMcpServerAppPermissionDo {
 	return m.withDO(m.DO.Assign(attrs...))
 }
 
+// Joins ...
 func (m mcpServerAppPermissionDo) Joins(fields ...field.RelationField) IMcpServerAppPermissionDo {
 	for _, _f := range fields {
 		m = *m.withDO(m.DO.Joins(_f))
@@ -377,6 +419,7 @@ func (m mcpServerAppPermissionDo) Joins(fields ...field.RelationField) IMcpServe
 	return &m
 }
 
+// Preload ...
 func (m mcpServerAppPermissionDo) Preload(fields ...field.RelationField) IMcpServerAppPermissionDo {
 	for _, _f := range fields {
 		m = *m.withDO(m.DO.Preload(_f))
@@ -384,6 +427,7 @@ func (m mcpServerAppPermissionDo) Preload(fields ...field.RelationField) IMcpSer
 	return &m
 }
 
+// FirstOrInit ...
 func (m mcpServerAppPermissionDo) FirstOrInit() (*model.MCPServerAppPermission, error) {
 	if result, err := m.DO.FirstOrInit(); err != nil {
 		return nil, err
@@ -392,6 +436,7 @@ func (m mcpServerAppPermissionDo) FirstOrInit() (*model.MCPServerAppPermission, 
 	}
 }
 
+// FirstOrCreate ...
 func (m mcpServerAppPermissionDo) FirstOrCreate() (*model.MCPServerAppPermission, error) {
 	if result, err := m.DO.FirstOrCreate(); err != nil {
 		return nil, err
@@ -400,6 +445,7 @@ func (m mcpServerAppPermissionDo) FirstOrCreate() (*model.MCPServerAppPermission
 	}
 }
 
+// FindByPage ...
 func (m mcpServerAppPermissionDo) FindByPage(
 	offset int,
 	limit int,
@@ -418,6 +464,7 @@ func (m mcpServerAppPermissionDo) FindByPage(
 	return
 }
 
+// ScanByPage ...
 func (m mcpServerAppPermissionDo) ScanByPage(result interface{}, offset int, limit int) (count int64, err error) {
 	count, err = m.Count()
 	if err != nil {
@@ -428,10 +475,12 @@ func (m mcpServerAppPermissionDo) ScanByPage(result interface{}, offset int, lim
 	return
 }
 
+// Scan ...
 func (m mcpServerAppPermissionDo) Scan(result interface{}) (err error) {
 	return m.DO.Scan(result)
 }
 
+// Delete ...
 func (m mcpServerAppPermissionDo) Delete(models ...*model.MCPServerAppPermission) (result gen.ResultInfo, err error) {
 	return m.DO.Delete(models)
 }

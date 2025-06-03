@@ -68,11 +68,13 @@ type coreJWT struct {
 	fieldMap map[string]field.Expr
 }
 
+// Table ...
 func (c coreJWT) Table(newTableName string) *coreJWT {
 	c.coreJWTDo.UseTable(newTableName)
 	return c.updateTableName(newTableName)
 }
 
+// As ...
 func (c coreJWT) As(alias string) *coreJWT {
 	c.coreJWTDo.DO = *(c.coreJWTDo.As(alias).(*gen.DO))
 	return c.updateTableName(alias)
@@ -90,14 +92,19 @@ func (c *coreJWT) updateTableName(table string) *coreJWT {
 	return c
 }
 
+// WithContext ...
 func (c *coreJWT) WithContext(ctx context.Context) ICoreJWTDo { return c.coreJWTDo.WithContext(ctx) }
 
+// TableName ...
 func (c coreJWT) TableName() string { return c.coreJWTDo.TableName() }
 
+// Alias ...
 func (c coreJWT) Alias() string { return c.coreJWTDo.Alias() }
 
+// Columns ...
 func (c coreJWT) Columns(cols ...field.Expr) gen.Columns { return c.coreJWTDo.Columns(cols...) }
 
+// GetFieldByName ...
 func (c *coreJWT) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 	_f, ok := c.fieldMap[fieldName]
 	if !ok || _f == nil {
@@ -127,6 +134,7 @@ func (c coreJWT) replaceDB(db *gorm.DB) coreJWT {
 
 type coreJWTDo struct{ gen.DO }
 
+// ICoreJWTDo ...
 type ICoreJWTDo interface {
 	gen.SubQuery
 	Debug() ICoreJWTDo
@@ -190,98 +198,122 @@ type ICoreJWTDo interface {
 	schema.Tabler
 }
 
+// Debug ...
 func (c coreJWTDo) Debug() ICoreJWTDo {
 	return c.withDO(c.DO.Debug())
 }
 
+// WithContext ...
 func (c coreJWTDo) WithContext(ctx context.Context) ICoreJWTDo {
 	return c.withDO(c.DO.WithContext(ctx))
 }
 
+// ReadDB ...
 func (c coreJWTDo) ReadDB() ICoreJWTDo {
 	return c.Clauses(dbresolver.Read)
 }
 
+// WriteDB ...
 func (c coreJWTDo) WriteDB() ICoreJWTDo {
 	return c.Clauses(dbresolver.Write)
 }
 
+// Session ...
 func (c coreJWTDo) Session(config *gorm.Session) ICoreJWTDo {
 	return c.withDO(c.DO.Session(config))
 }
 
+// Clauses ...
 func (c coreJWTDo) Clauses(conds ...clause.Expression) ICoreJWTDo {
 	return c.withDO(c.DO.Clauses(conds...))
 }
 
+// Returning ...
 func (c coreJWTDo) Returning(value interface{}, columns ...string) ICoreJWTDo {
 	return c.withDO(c.DO.Returning(value, columns...))
 }
 
+// Not ...
 func (c coreJWTDo) Not(conds ...gen.Condition) ICoreJWTDo {
 	return c.withDO(c.DO.Not(conds...))
 }
 
+// Or ...
 func (c coreJWTDo) Or(conds ...gen.Condition) ICoreJWTDo {
 	return c.withDO(c.DO.Or(conds...))
 }
 
+// Select ...
 func (c coreJWTDo) Select(conds ...field.Expr) ICoreJWTDo {
 	return c.withDO(c.DO.Select(conds...))
 }
 
+// Where ...
 func (c coreJWTDo) Where(conds ...gen.Condition) ICoreJWTDo {
 	return c.withDO(c.DO.Where(conds...))
 }
 
+// Order ...
 func (c coreJWTDo) Order(conds ...field.Expr) ICoreJWTDo {
 	return c.withDO(c.DO.Order(conds...))
 }
 
+// Distinct ...
 func (c coreJWTDo) Distinct(cols ...field.Expr) ICoreJWTDo {
 	return c.withDO(c.DO.Distinct(cols...))
 }
 
+// Omit ...
 func (c coreJWTDo) Omit(cols ...field.Expr) ICoreJWTDo {
 	return c.withDO(c.DO.Omit(cols...))
 }
 
+// Join ...
 func (c coreJWTDo) Join(table schema.Tabler, on ...field.Expr) ICoreJWTDo {
 	return c.withDO(c.DO.Join(table, on...))
 }
 
+// LeftJoin ...
 func (c coreJWTDo) LeftJoin(table schema.Tabler, on ...field.Expr) ICoreJWTDo {
 	return c.withDO(c.DO.LeftJoin(table, on...))
 }
 
+// RightJoin ...
 func (c coreJWTDo) RightJoin(table schema.Tabler, on ...field.Expr) ICoreJWTDo {
 	return c.withDO(c.DO.RightJoin(table, on...))
 }
 
+// Group ...
 func (c coreJWTDo) Group(cols ...field.Expr) ICoreJWTDo {
 	return c.withDO(c.DO.Group(cols...))
 }
 
+// Having ...
 func (c coreJWTDo) Having(conds ...gen.Condition) ICoreJWTDo {
 	return c.withDO(c.DO.Having(conds...))
 }
 
+// Limit ...
 func (c coreJWTDo) Limit(limit int) ICoreJWTDo {
 	return c.withDO(c.DO.Limit(limit))
 }
 
+// Offset ...
 func (c coreJWTDo) Offset(offset int) ICoreJWTDo {
 	return c.withDO(c.DO.Offset(offset))
 }
 
+// Scopes ...
 func (c coreJWTDo) Scopes(funcs ...func(gen.Dao) gen.Dao) ICoreJWTDo {
 	return c.withDO(c.DO.Scopes(funcs...))
 }
 
+// Unscoped ...
 func (c coreJWTDo) Unscoped() ICoreJWTDo {
 	return c.withDO(c.DO.Unscoped())
 }
 
+// Create ...
 func (c coreJWTDo) Create(values ...*model.JWT) error {
 	if len(values) == 0 {
 		return nil
@@ -289,6 +321,7 @@ func (c coreJWTDo) Create(values ...*model.JWT) error {
 	return c.DO.Create(values)
 }
 
+// CreateInBatches ...
 func (c coreJWTDo) CreateInBatches(values []*model.JWT, batchSize int) error {
 	return c.DO.CreateInBatches(values, batchSize)
 }
@@ -302,6 +335,7 @@ func (c coreJWTDo) Save(values ...*model.JWT) error {
 	return c.DO.Save(values)
 }
 
+// First ...
 func (c coreJWTDo) First() (*model.JWT, error) {
 	if result, err := c.DO.First(); err != nil {
 		return nil, err
@@ -310,6 +344,7 @@ func (c coreJWTDo) First() (*model.JWT, error) {
 	}
 }
 
+// Take ...
 func (c coreJWTDo) Take() (*model.JWT, error) {
 	if result, err := c.DO.Take(); err != nil {
 		return nil, err
@@ -318,6 +353,7 @@ func (c coreJWTDo) Take() (*model.JWT, error) {
 	}
 }
 
+// Last ...
 func (c coreJWTDo) Last() (*model.JWT, error) {
 	if result, err := c.DO.Last(); err != nil {
 		return nil, err
@@ -326,11 +362,13 @@ func (c coreJWTDo) Last() (*model.JWT, error) {
 	}
 }
 
+// Find ...
 func (c coreJWTDo) Find() ([]*model.JWT, error) {
 	result, err := c.DO.Find()
 	return result.([]*model.JWT), err
 }
 
+// FindInBatch ...
 func (c coreJWTDo) FindInBatch(
 	batchSize int,
 	fc func(tx gen.Dao, batch int) error,
@@ -343,18 +381,22 @@ func (c coreJWTDo) FindInBatch(
 	return results, err
 }
 
+// FindInBatches ...
 func (c coreJWTDo) FindInBatches(result *[]*model.JWT, batchSize int, fc func(tx gen.Dao, batch int) error) error {
 	return c.DO.FindInBatches(result, batchSize, fc)
 }
 
+// Attrs ...
 func (c coreJWTDo) Attrs(attrs ...field.AssignExpr) ICoreJWTDo {
 	return c.withDO(c.DO.Attrs(attrs...))
 }
 
+// Assign ...
 func (c coreJWTDo) Assign(attrs ...field.AssignExpr) ICoreJWTDo {
 	return c.withDO(c.DO.Assign(attrs...))
 }
 
+// Joins ...
 func (c coreJWTDo) Joins(fields ...field.RelationField) ICoreJWTDo {
 	for _, _f := range fields {
 		c = *c.withDO(c.DO.Joins(_f))
@@ -362,6 +404,7 @@ func (c coreJWTDo) Joins(fields ...field.RelationField) ICoreJWTDo {
 	return &c
 }
 
+// Preload ...
 func (c coreJWTDo) Preload(fields ...field.RelationField) ICoreJWTDo {
 	for _, _f := range fields {
 		c = *c.withDO(c.DO.Preload(_f))
@@ -369,6 +412,7 @@ func (c coreJWTDo) Preload(fields ...field.RelationField) ICoreJWTDo {
 	return &c
 }
 
+// FirstOrInit ...
 func (c coreJWTDo) FirstOrInit() (*model.JWT, error) {
 	if result, err := c.DO.FirstOrInit(); err != nil {
 		return nil, err
@@ -377,6 +421,7 @@ func (c coreJWTDo) FirstOrInit() (*model.JWT, error) {
 	}
 }
 
+// FirstOrCreate ...
 func (c coreJWTDo) FirstOrCreate() (*model.JWT, error) {
 	if result, err := c.DO.FirstOrCreate(); err != nil {
 		return nil, err
@@ -385,6 +430,7 @@ func (c coreJWTDo) FirstOrCreate() (*model.JWT, error) {
 	}
 }
 
+// FindByPage ...
 func (c coreJWTDo) FindByPage(offset int, limit int) (result []*model.JWT, count int64, err error) {
 	result, err = c.Offset(offset).Limit(limit).Find()
 	if err != nil {
@@ -400,6 +446,7 @@ func (c coreJWTDo) FindByPage(offset int, limit int) (result []*model.JWT, count
 	return
 }
 
+// ScanByPage ...
 func (c coreJWTDo) ScanByPage(result interface{}, offset int, limit int) (count int64, err error) {
 	count, err = c.Count()
 	if err != nil {
@@ -410,10 +457,12 @@ func (c coreJWTDo) ScanByPage(result interface{}, offset int, limit int) (count 
 	return
 }
 
+// Scan ...
 func (c coreJWTDo) Scan(result interface{}) (err error) {
 	return c.DO.Scan(result)
 }
 
+// Delete ...
 func (c coreJWTDo) Delete(models ...*model.JWT) (result gen.ResultInfo, err error) {
 	return c.DO.Delete(models)
 }

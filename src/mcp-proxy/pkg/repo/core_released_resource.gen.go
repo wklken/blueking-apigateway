@@ -76,11 +76,13 @@ type coreReleasedResource struct {
 	fieldMap map[string]field.Expr
 }
 
+// Table ...
 func (c coreReleasedResource) Table(newTableName string) *coreReleasedResource {
 	c.coreReleasedResourceDo.UseTable(newTableName)
 	return c.updateTableName(newTableName)
 }
 
+// As ...
 func (c coreReleasedResource) As(alias string) *coreReleasedResource {
 	c.coreReleasedResourceDo.DO = *(c.coreReleasedResourceDo.As(alias).(*gen.DO))
 	return c.updateTableName(alias)
@@ -102,18 +104,23 @@ func (c *coreReleasedResource) updateTableName(table string) *coreReleasedResour
 	return c
 }
 
+// WithContext ...
 func (c *coreReleasedResource) WithContext(ctx context.Context) ICoreReleasedResourceDo {
 	return c.coreReleasedResourceDo.WithContext(ctx)
 }
 
+// TableName ...
 func (c coreReleasedResource) TableName() string { return c.coreReleasedResourceDo.TableName() }
 
+// Alias ...
 func (c coreReleasedResource) Alias() string { return c.coreReleasedResourceDo.Alias() }
 
+// Columns ...
 func (c coreReleasedResource) Columns(cols ...field.Expr) gen.Columns {
 	return c.coreReleasedResourceDo.Columns(cols...)
 }
 
+// GetFieldByName ...
 func (c *coreReleasedResource) GetFieldByName(fieldName string) (field.OrderExpr, bool) {
 	_f, ok := c.fieldMap[fieldName]
 	if !ok || _f == nil {
@@ -147,6 +154,7 @@ func (c coreReleasedResource) replaceDB(db *gorm.DB) coreReleasedResource {
 
 type coreReleasedResourceDo struct{ gen.DO }
 
+// ICoreReleasedResourceDo ...
 type ICoreReleasedResourceDo interface {
 	gen.SubQuery
 	Debug() ICoreReleasedResourceDo
@@ -210,98 +218,122 @@ type ICoreReleasedResourceDo interface {
 	schema.Tabler
 }
 
+// Debug ...
 func (c coreReleasedResourceDo) Debug() ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Debug())
 }
 
+// WithContext ...
 func (c coreReleasedResourceDo) WithContext(ctx context.Context) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.WithContext(ctx))
 }
 
+// ReadDB ...
 func (c coreReleasedResourceDo) ReadDB() ICoreReleasedResourceDo {
 	return c.Clauses(dbresolver.Read)
 }
 
+// WriteDB ...
 func (c coreReleasedResourceDo) WriteDB() ICoreReleasedResourceDo {
 	return c.Clauses(dbresolver.Write)
 }
 
+// Session ...
 func (c coreReleasedResourceDo) Session(config *gorm.Session) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Session(config))
 }
 
+// Clauses ...
 func (c coreReleasedResourceDo) Clauses(conds ...clause.Expression) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Clauses(conds...))
 }
 
+// Returning ...
 func (c coreReleasedResourceDo) Returning(value interface{}, columns ...string) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Returning(value, columns...))
 }
 
+// Not ...
 func (c coreReleasedResourceDo) Not(conds ...gen.Condition) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Not(conds...))
 }
 
+// Or ...
 func (c coreReleasedResourceDo) Or(conds ...gen.Condition) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Or(conds...))
 }
 
+// Select ...
 func (c coreReleasedResourceDo) Select(conds ...field.Expr) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Select(conds...))
 }
 
+// Where ...
 func (c coreReleasedResourceDo) Where(conds ...gen.Condition) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Where(conds...))
 }
 
+// Order ...
 func (c coreReleasedResourceDo) Order(conds ...field.Expr) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Order(conds...))
 }
 
+// Distinct ...
 func (c coreReleasedResourceDo) Distinct(cols ...field.Expr) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Distinct(cols...))
 }
 
+// Omit ...
 func (c coreReleasedResourceDo) Omit(cols ...field.Expr) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Omit(cols...))
 }
 
+// Join ...
 func (c coreReleasedResourceDo) Join(table schema.Tabler, on ...field.Expr) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Join(table, on...))
 }
 
+// LeftJoin ...
 func (c coreReleasedResourceDo) LeftJoin(table schema.Tabler, on ...field.Expr) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.LeftJoin(table, on...))
 }
 
+// RightJoin ...
 func (c coreReleasedResourceDo) RightJoin(table schema.Tabler, on ...field.Expr) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.RightJoin(table, on...))
 }
 
+// Group ...
 func (c coreReleasedResourceDo) Group(cols ...field.Expr) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Group(cols...))
 }
 
+// Having ...
 func (c coreReleasedResourceDo) Having(conds ...gen.Condition) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Having(conds...))
 }
 
+// Limit ...
 func (c coreReleasedResourceDo) Limit(limit int) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Limit(limit))
 }
 
+// Offset ...
 func (c coreReleasedResourceDo) Offset(offset int) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Offset(offset))
 }
 
+// Scopes ...
 func (c coreReleasedResourceDo) Scopes(funcs ...func(gen.Dao) gen.Dao) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Scopes(funcs...))
 }
 
+// Unscoped ...
 func (c coreReleasedResourceDo) Unscoped() ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Unscoped())
 }
 
+// Create ...
 func (c coreReleasedResourceDo) Create(values ...*model.ReleasedResource) error {
 	if len(values) == 0 {
 		return nil
@@ -309,6 +341,7 @@ func (c coreReleasedResourceDo) Create(values ...*model.ReleasedResource) error 
 	return c.DO.Create(values)
 }
 
+// CreateInBatches ...
 func (c coreReleasedResourceDo) CreateInBatches(values []*model.ReleasedResource, batchSize int) error {
 	return c.DO.CreateInBatches(values, batchSize)
 }
@@ -322,6 +355,7 @@ func (c coreReleasedResourceDo) Save(values ...*model.ReleasedResource) error {
 	return c.DO.Save(values)
 }
 
+// First ...
 func (c coreReleasedResourceDo) First() (*model.ReleasedResource, error) {
 	if result, err := c.DO.First(); err != nil {
 		return nil, err
@@ -330,6 +364,7 @@ func (c coreReleasedResourceDo) First() (*model.ReleasedResource, error) {
 	}
 }
 
+// Take ...
 func (c coreReleasedResourceDo) Take() (*model.ReleasedResource, error) {
 	if result, err := c.DO.Take(); err != nil {
 		return nil, err
@@ -338,6 +373,7 @@ func (c coreReleasedResourceDo) Take() (*model.ReleasedResource, error) {
 	}
 }
 
+// Last ...
 func (c coreReleasedResourceDo) Last() (*model.ReleasedResource, error) {
 	if result, err := c.DO.Last(); err != nil {
 		return nil, err
@@ -346,11 +382,13 @@ func (c coreReleasedResourceDo) Last() (*model.ReleasedResource, error) {
 	}
 }
 
+// Find ...
 func (c coreReleasedResourceDo) Find() ([]*model.ReleasedResource, error) {
 	result, err := c.DO.Find()
 	return result.([]*model.ReleasedResource), err
 }
 
+// FindInBatch ...
 func (c coreReleasedResourceDo) FindInBatch(
 	batchSize int,
 	fc func(tx gen.Dao, batch int) error,
@@ -363,6 +401,7 @@ func (c coreReleasedResourceDo) FindInBatch(
 	return results, err
 }
 
+// FindInBatches ...
 func (c coreReleasedResourceDo) FindInBatches(
 	result *[]*model.ReleasedResource,
 	batchSize int,
@@ -371,14 +410,17 @@ func (c coreReleasedResourceDo) FindInBatches(
 	return c.DO.FindInBatches(result, batchSize, fc)
 }
 
+// Attrs ...
 func (c coreReleasedResourceDo) Attrs(attrs ...field.AssignExpr) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Attrs(attrs...))
 }
 
+// Assign ...
 func (c coreReleasedResourceDo) Assign(attrs ...field.AssignExpr) ICoreReleasedResourceDo {
 	return c.withDO(c.DO.Assign(attrs...))
 }
 
+// Joins ...
 func (c coreReleasedResourceDo) Joins(fields ...field.RelationField) ICoreReleasedResourceDo {
 	for _, _f := range fields {
 		c = *c.withDO(c.DO.Joins(_f))
@@ -386,6 +428,7 @@ func (c coreReleasedResourceDo) Joins(fields ...field.RelationField) ICoreReleas
 	return &c
 }
 
+// Preload ...
 func (c coreReleasedResourceDo) Preload(fields ...field.RelationField) ICoreReleasedResourceDo {
 	for _, _f := range fields {
 		c = *c.withDO(c.DO.Preload(_f))
@@ -393,6 +436,7 @@ func (c coreReleasedResourceDo) Preload(fields ...field.RelationField) ICoreRele
 	return &c
 }
 
+// FirstOrInit ...
 func (c coreReleasedResourceDo) FirstOrInit() (*model.ReleasedResource, error) {
 	if result, err := c.DO.FirstOrInit(); err != nil {
 		return nil, err
@@ -401,6 +445,7 @@ func (c coreReleasedResourceDo) FirstOrInit() (*model.ReleasedResource, error) {
 	}
 }
 
+// FirstOrCreate ...
 func (c coreReleasedResourceDo) FirstOrCreate() (*model.ReleasedResource, error) {
 	if result, err := c.DO.FirstOrCreate(); err != nil {
 		return nil, err
@@ -409,6 +454,7 @@ func (c coreReleasedResourceDo) FirstOrCreate() (*model.ReleasedResource, error)
 	}
 }
 
+// FindByPage ...
 func (c coreReleasedResourceDo) FindByPage(
 	offset int,
 	limit int,
@@ -427,6 +473,7 @@ func (c coreReleasedResourceDo) FindByPage(
 	return
 }
 
+// ScanByPage ...
 func (c coreReleasedResourceDo) ScanByPage(result interface{}, offset int, limit int) (count int64, err error) {
 	count, err = c.Count()
 	if err != nil {
@@ -437,10 +484,12 @@ func (c coreReleasedResourceDo) ScanByPage(result interface{}, offset int, limit
 	return
 }
 
+// Scan ...
 func (c coreReleasedResourceDo) Scan(result interface{}) (err error) {
 	return c.DO.Scan(result)
 }
 
+// Delete ...
 func (c coreReleasedResourceDo) Delete(models ...*model.ReleasedResource) (result gen.ResultInfo, err error) {
 	return c.DO.Delete(models)
 }
