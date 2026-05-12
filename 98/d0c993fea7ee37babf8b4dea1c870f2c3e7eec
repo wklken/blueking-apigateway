@@ -1,0 +1,36 @@
+bk-sec-todo.md
+  s_0e0c5535b46428::t_d91410a1ff0c0d 24-29
+  s_0e0c5535b46428::t_f1c99c2f99252c 1-23,30-39
+src/core-api/go.mod
+  s_0e0c5535b46428::t_2910301eb8aff5 3,13-14,17,28,35-41,49-52,54-55,58-60,69-70,72,74-75,79-80,83,88,94-95,101-105,108-118
+src/core-api/.golangci.yaml
+  s_0e0c5535b46428::t_d91410a1ff0c0d 1,10,12-39,41-50
+src/core-api/README.md
+  s_0e0c5535b46428::t_d91410a1ff0c0d 23
+src/core-api/Dockerfile
+  s_0e0c5535b46428::t_d91410a1ff0c0d 1,12,14
+src/core-api/pkg/cacheimpls/publish_event.go
+  s_0e0c5535b46428::t_ad7f1a3d25d105 1-18
+.github/workflows/core-api.yml
+  s_0e0c5535b46428::t_d91410a1ff0c0d 6,9,20,23,25,28-31,37,39,50-55
+src/core-api/Makefile
+  s_0e0c5535b46428::t_d91410a1ff0c0d 3,10,39-40
+src/core-api/docs/docs.go
+  s_0e0c5535b46428::t_ad7f1a3d25d105 1-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "98d0c993fea7ee37babf8b4dea1c870f2c3e7eec",
+  "prompts": {},
+  "sessions": {
+    "s_0e0c5535b46428": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e1b33-c3d1-7ad3-9669-7fb836c4b46a",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
