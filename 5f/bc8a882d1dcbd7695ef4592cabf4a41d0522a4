@@ -1,0 +1,29 @@
+src/dashboard-front/package.json
+  s_1c8d1bb2258bd0::t_eb370c6c63a966 123,126-127,130-131
+  s_1c8d1bb2258bd0::t_27af4c3fd3bb82 92,104-115
+  s_1c8d1bb2258bd0::t_c4e125bca619d9 39
+  s_1c8d1bb2258bd0::t_8f25879bcfd53f 93-100,102-103,117-121,124,128-129
+  s_1c8d1bb2258bd0::t_948e07af07b0e7 44,56,116
+  s_1c8d1bb2258bd0::t_4f77eccd78dc3f 101,122,125
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "5fbc8a882d1dcbd7695ef4592cabf4a41d0522a4",
+  "prompts": {},
+  "humans": {
+    "h_2ed7cc0c587d3d": {
+      "author": "wklken <wklken@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_1c8d1bb2258bd0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e1c2f-c0e1-7683-a395-a311cc736466",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
