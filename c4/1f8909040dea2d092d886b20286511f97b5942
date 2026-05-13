@@ -1,0 +1,14 @@
+.github/workflows/dashboard.yml
+  h_2ed7cc0c587d3d 38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "c41f8909040dea2d092d886b20286511f97b5942",
+  "prompts": {},
+  "humans": {
+    "h_2ed7cc0c587d3d": {
+      "author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
