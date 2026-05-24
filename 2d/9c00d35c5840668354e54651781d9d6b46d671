@@ -1,0 +1,30 @@
+src/mcp-proxy/AGENTS.md
+  s_9ad40b13908f2d::t_c55ffb54ca1861 3,5,7-29,32-34,36-45,48-49,51-54,57-66,68-70,72,74-101,103,105,107-114,116-139,142-145,147,149,151-168,170,172-182,186,188,190-207,209,211-223,225,227-239,241,243-252,254,256-268
+  s_9ad40b13908f2d::t_b28c29bf211d46 183-185
+src/core-api/AGENTS.md
+  s_9f07348e6b7af2::t_d0787c36f1e792 3-162,164-178,182-255,257-265,267,269-275,277,279-285,287,289-292,294,296-301
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "2d9c00d35c5840668354e54651781d9d6b46d671",
+  "prompts": {},
+  "sessions": {
+    "s_9ad40b13908f2d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e579d-c9d2-7563-bfc8-002eaa0c765f",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    },
+    "s_9f07348e6b7af2": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e578e-4126-7703-8ebc-e2335f7f4aba",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
