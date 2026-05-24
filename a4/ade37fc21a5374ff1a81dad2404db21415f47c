@@ -1,0 +1,19 @@
+AGENTS.md
+  s_e855e690b5379f::t_210fc44a3fad2b 21-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "a4ade37fc21a5374ff1a81dad2404db21415f47c",
+  "prompts": {},
+  "sessions": {
+    "s_e855e690b5379f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e57db-0c2e-78d0-a304-329cf4d626b8",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
