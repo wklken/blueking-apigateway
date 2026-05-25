@@ -1,0 +1,26 @@
+src/operator/pkg/utils/groutine_test.go
+  s_2faf81bf253477::t_5ec5802dba8524 1-3,6-11,18-26
+  s_2faf81bf253477::t_a72e16ce0502e2 4-5,12-17
+src/operator/pkg/core/committer/committer_test.go
+  s_2faf81bf253477::t_8241833cc82ea0 23-24,730-759
+src/operator/pkg/utils/groutine.go
+  s_2faf81bf253477::t_9f12bf8e75d6b0 36,42-49
+src/operator/pkg/core/committer/committer.go
+  s_2faf81bf253477::t_aec76af9c8ab66 147
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "594344e50ee7cd95ced32039dc6d0544ef4905dd",
+  "prompts": {},
+  "sessions": {
+    "s_2faf81bf253477": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e5cf1-1c83-7043-85bb-26fc07952205",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
