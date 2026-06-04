@@ -1,0 +1,19 @@
+.github/workflows/dashboard.yml
+  s_aac2ecb5a9bd36::t_216d9f15905b8a 43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "69e9b0afc25993b4859599a11ada5052a8a3600f",
+  "prompts": {},
+  "sessions": {
+    "s_aac2ecb5a9bd36": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e9142-a242-7dd3-ada5-51ff1bacf786",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
