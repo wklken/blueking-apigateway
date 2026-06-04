@@ -1,0 +1,26 @@
+src/operator/Dockerfile
+  s_d76c0e0d0debe9::t_5c1259d81c5a44 7-8,10
+src/operator/Makefile
+  s_d76c0e0d0debe9::t_956b9e73f3e80d 2-3,75-76,83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "fb5662a0eec862124c3141364c1afe0e586f637f",
+  "prompts": {},
+  "humans": {
+    "h_2ed7cc0c587d3d": {
+      "author": "wklken <wklken@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_d76c0e0d0debe9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e5ce6-a9c3-7e31-b8b1-6373536c8b17",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}

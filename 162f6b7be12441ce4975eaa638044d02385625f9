@@ -1,0 +1,15 @@
+src/dashboard/apigateway/apigateway/tests/service/test_release.py
+  ai_agent 1-65
+src/dashboard/apigateway/apigateway/tests/apps/mcp_server/test_tasks.py
+  ai_agent 44,75,99
+src/dashboard/apigateway/apigateway/apps/mcp_server/tasks.py
+  ai_agent 28,240
+src/dashboard/pyproject.toml
+  ai_agent 309,356
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "162f6b7be12441ce4975eaa638044d02385625f9",
+  "prompts": {}
+}

@@ -1,0 +1,14 @@
+.github/workflows/core-api.yml
+  h_2ed7cc0c587d3d 41,43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "50265901091a21feb091e822212fe9db3ae5b270",
+  "prompts": {},
+  "humans": {
+    "h_2ed7cc0c587d3d": {
+      "author": "wklken <wklken@gmail.com>"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+src/operator/pkg/client/apisix.go
+  s_8039874a39168e::t_af578eed09a579 95
+  s_8039874a39168e::t_73b3ea96c5dd6d 85-94,96-97,105-113,123,126-162,165-171,174-186,188-190,193-194
+  s_8039874a39168e::t_ae9bd9f1f9f8af 98-104
+src/operator/pkg/client/resource_slz.go
+  s_8039874a39168e::t_ed5db6909b226a 29
+src/operator/pkg/config/config.go
+  s_8039874a39168e::t_1fa35260f32dec 209
+src/operator/docs/debug/README_EN.md
+  h_2ed7cc0c587d3d 11,15,22,33,36,54,57
+src/operator/pkg/apis/open/serializer/common.go
+  s_8039874a39168e::t_3e964e2e8d74f0 27
+src/operator/cmd/list_apisix.go
+  s_8039874a39168e::t_7f6bea61e9a186 149
+src/operator/cmd/list_apigw.go
+  s_8039874a39168e::t_01a3566beb3fca 149
+src/operator/pkg/client/resource_slz_test.go
+  s_8039874a39168e::t_effda6018eca5c 1-34
+src/operator/pkg/client/apisix_test.go
+  s_8039874a39168e::t_5b2edfc7c831d8 1-3,5-53,55-75
+  s_8039874a39168e::t_9b63a585063c4d 4,54
+src/operator/pkg/apis/open/serializer/common_test.go
+  s_8039874a39168e::t_24a44ed5e6b455 1-36
+src/operator/config.yaml.tpl
+  s_8039874a39168e::t_e4bc8ab5cba752 46-47
+  h_2ed7cc0c587d3d 1
+  s_8039874a39168e::t_8938bc0a3fcc58 13,77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "4e75f255a8117201505947eaa77f7e8af565d27c",
+  "prompts": {},
+  "humans": {
+    "h_2ed7cc0c587d3d": {
+      "author": "wklken <wklken@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_8039874a39168e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e5d19-c6dc-7293-891f-71ea1016b2f6",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}

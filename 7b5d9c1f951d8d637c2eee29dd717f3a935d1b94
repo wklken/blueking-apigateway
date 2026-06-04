@@ -1,0 +1,148 @@
+src/operator/pkg/client/core_api.go
+  s_a3b136959e0eca::t_84beff3366fed0 30-31
+src/operator/pkg/server/server_test.go
+  s_a3b136959e0eca::t_0299362750a799 9-10
+  s_d0a03e048cfa06::t_17c5bef6a9840d 1-8,11-43
+src/operator/pkg/client/apisix.go
+  s_a3b136959e0eca::t_84beff3366fed0 36-39
+src/operator/pkg/apis/open/handler/apisix.go
+  s_a3b136959e0eca::t_84beff3366fed0 27-28
+src/operator/pkg/core/synchronizer/virtual_stage.go
+  s_a3b136959e0eca::t_84beff3366fed0 27-29
+src/operator/pkg/trace/init.go
+  s_a3b136959e0eca::t_84beff3366fed0 36-37
+src/operator/pkg/leaderelection/etcd_election_test.go
+  s_a3b136959e0eca::t_92bdf004d3f4bb 25-26
+  s_a3b136959e0eca::t_0299362750a799 1-24,27-111
+src/operator/pkg/utils/response_test.go
+  s_a3b136959e0eca::t_92bdf004d3f4bb 31
+  s_a3b136959e0eca::t_0299362750a799 1-30,32-90
+src/operator/cmd/root.go
+  s_a3b136959e0eca::t_84beff3366fed0 29-31
+src/operator/pkg/utils/schema/validate.go
+  s_a3b136959e0eca::t_84beff3366fed0 33-36
+src/operator/pkg/core/synchronizer/virtual_stage_test.go
+  s_a3b136959e0eca::t_0299362750a799 1-28,31-33,35-275
+  s_a3b136959e0eca::t_92bdf004d3f4bb 29-30,34
+src/operator/pkg/core/agent/timer/timer_test.go
+  s_a3b136959e0eca::t_0299362750a799 1-26,28-224
+  s_a3b136959e0eca::t_92bdf004d3f4bb 27
+src/operator/pkg/apis/open/router.go
+  s_a3b136959e0eca::t_84beff3366fed0 1-50
+src/operator/pkg/core/agent/agent.go
+  s_a3b136959e0eca::t_84beff3366fed0 26-28
+src/operator/cmd/init.go
+  s_a3b136959e0eca::t_84beff3366fed0 30-34
+src/operator/main.go
+  s_a3b136959e0eca::t_ffeb09c3ac456a 25-26
+src/operator/pkg/core/store/store_test.go
+  s_a3b136959e0eca::t_92bdf004d3f4bb 27
+  s_a3b136959e0eca::t_0299362750a799 1-26,28-280
+src/operator/pkg/core/synchronizer/synchronizer_test.go
+  s_a3b136959e0eca::t_0299362750a799 1-26,29-853
+  s_a3b136959e0eca::t_92bdf004d3f4bb 27-28
+src/operator/pkg/apis/open/handler/leader.go
+  s_a3b136959e0eca::t_84beff3366fed0 26-27
+src/operator/pkg/utils/schema/schema.go
+  s_a3b136959e0eca::t_84beff3366fed0 24-25
+  s_a3b136959e0eca::t_92bdf004d3f4bb 22
+  s_a3b136959e0eca::t_ffeb09c3ac456a 26-27
+src/operator/pkg/utils/string_test.go
+  s_a3b136959e0eca::t_92bdf004d3f4bb 23
+  s_a3b136959e0eca::t_0299362750a799 1-22,24-53
+src/operator/pkg/utils/validation_test.go
+  s_a3b136959e0eca::t_0299362750a799 1-26,28-217
+  s_a3b136959e0eca::t_92bdf004d3f4bb 27
+src/operator/cmd/list_apisix.go
+  s_a3b136959e0eca::t_84beff3366fed0 28-29
+src/operator/cmd/version.go
+  s_a3b136959e0eca::t_84beff3366fed0 27-28
+src/operator/pkg/server/router.go
+  s_a3b136959e0eca::t_84beff3366fed0 1-57
+src/operator/tests/integration/operator_test.go
+  s_a3b136959e0eca::t_92bdf004d3f4bb 31
+  s_a3b136959e0eca::t_0299362750a799 1-30,32-283
+src/operator/tests/util/embed_etcd_test.go
+  s_a3b136959e0eca::t_92bdf004d3f4bb 28-29
+  s_a3b136959e0eca::t_0299362750a799 1-27,30-77
+src/operator/pkg/config/config.go
+  s_a3b136959e0eca::t_84beff3366fed0 29-30
+src/operator/Makefile
+  s_a3b136959e0eca::t_5bd245696d00fe 16-46
+src/operator/pkg/client/base.go
+  s_a3b136959e0eca::t_84beff3366fed0 26-27
+src/operator/.golangci.yaml
+  s_a3b136959e0eca::t_619fc763f6af5d 136
+  s_a3b136959e0eca::t_310e807b5dcf23 130-135
+src/operator/pkg/entity/entity_test.go
+  s_a3b136959e0eca::t_0299362750a799 1-26,28-494
+  s_a3b136959e0eca::t_92bdf004d3f4bb 27
+src/operator/pkg/core/synchronizer/synchronizer.go
+  s_a3b136959e0eca::t_84beff3366fed0 28-30
+src/operator/pkg/core/committer/committer.go
+  s_a3b136959e0eca::t_84beff3366fed0 27-28
+src/operator/pkg/core/differ/diff_test.go
+  s_a3b136959e0eca::t_0299362750a799 1-27,29-748
+  s_a3b136959e0eca::t_92bdf004d3f4bb 28
+src/operator/pkg/entity/entity.go
+  s_a3b136959e0eca::t_84beff3366fed0 30-32
+src/operator/pkg/leaderelection/etcd_election.go
+  s_a3b136959e0eca::t_84beff3366fed0 32-34
+src/operator/cmd/list_apigw.go
+  s_a3b136959e0eca::t_84beff3366fed0 28-29
+src/operator/pkg/client/resource.go
+  s_a3b136959e0eca::t_84beff3366fed0 32-34
+src/operator/pkg/core/runner/etcd.go
+  s_a3b136959e0eca::t_84beff3366fed0 27-30
+src/operator/pkg/apis/open/handler/apigw.go
+  s_a3b136959e0eca::t_84beff3366fed0 27-28
+src/operator/pkg/core/runner/common.go
+  s_a3b136959e0eca::t_84beff3366fed0 28-30
+src/operator/pkg/eventreporter/reporter.go
+  s_a3b136959e0eca::t_84beff3366fed0 29-30
+src/operator/pkg/logging/init.go
+  s_a3b136959e0eca::t_84beff3366fed0 33-34
+src/operator/tests/integration/util.go
+  s_a3b136959e0eca::t_84beff3366fed0 30-31
+src/operator/pkg/core/store/store.go
+  s_a3b136959e0eca::t_84beff3366fed0 30-33
+src/operator/pkg/core/registry/apisix.go
+  s_a3b136959e0eca::t_84beff3366fed0 35-38
+src/operator/pkg/core/agent/agent_test.go
+  s_a3b136959e0eca::t_92bdf004d3f4bb 27
+  s_a3b136959e0eca::t_0299362750a799 1-26,28-465
+src/operator/pkg/core/differ/diff.go
+  s_a3b136959e0eca::t_84beff3366fed0 28-31
+src/operator/pkg/core/registry/apigw_test.go
+  s_a3b136959e0eca::t_92bdf004d3f4bb 29-30
+  s_a3b136959e0eca::t_0299362750a799 1-28,31-472
+src/operator/pkg/core/registry/apigw.go
+  s_a3b136959e0eca::t_84beff3366fed0 36-42
+src/operator/pkg/server/server.go
+  s_a3b136959e0eca::t_84beff3366fed0 26-31
+  s_d0a03e048cfa06::t_17c5bef6a9840d 97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "7b5d9c1f951d8d637c2eee29dd717f3a935d1b94",
+  "prompts": {},
+  "sessions": {
+    "s_a3b136959e0eca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e4ef5-ec33-7ba0-9046-34256852878e",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    },
+    "s_d0a03e048cfa06": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e4eec-4e8f-7c13-8a2a-c1de4d86cc00",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}

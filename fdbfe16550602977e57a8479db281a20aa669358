@@ -1,0 +1,14 @@
+test/sync/httpbin/definition.yaml
+  h_2ed7cc0c587d3d 29-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "fdbfe16550602977e57a8479db281a20aa669358",
+  "prompts": {},
+  "humans": {
+    "h_2ed7cc0c587d3d": {
+      "author": "wklken <wklken@gmail.com>"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+src/operator/Dockerfile
+  s_d76c0e0d0debe9::t_5c1259d81c5a44 7-8,10
+src/operator/docs/debug/README.md
+  h_2ed7cc0c587d3d 11,15,22,33,36,54,57
+src/operator/pkg/utils/schema/validate_test.go
+  s_d76c0e0d0debe9::t_919278b4c52e66 700
+src/operator/Makefile
+  s_d76c0e0d0debe9::t_956b9e73f3e80d 2-3,75-76,83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "60b467a965546d91a678ad36f68aa2ec7fc0d28e",
+  "prompts": {},
+  "humans": {
+    "h_2ed7cc0c587d3d": {
+      "author": "wklken <wklken@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_d76c0e0d0debe9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e5ce6-a9c3-7e31-b8b1-6373536c8b17",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}

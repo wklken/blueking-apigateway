@@ -1,0 +1,29 @@
+src/dashboard/apigateway/apigateway/apis/web/docs/gateway/gateway_sdk/views.py
+  ai_agent 25,51,76
+src/dashboard/apigateway/apigateway/tests/apis/web/docs/gateway/resource/test_views.py
+  ai_agent 20-22,25-34
+src/dashboard/apigateway/apigateway/tests/apis/web/docs/gateway/gateway/test_views.py
+  ai_agent 20-21,41-45
+src/dashboard/apigateway/apigateway/apis/web/docs/gateway/gateway/views.py
+  ai_agent 24,103
+src/dashboard/apigateway/apigateway/tests/apis/web/docs/gateway/gateway_sdk/test_views.py
+  ai_agent 19-21,24-33,56-67
+src/dashboard/apigateway/apigateway/apis/web/docs/gateway/API_DOCS.md
+  ai_agent 1-78
+src/dashboard/apigateway/apigateway/tests/apis/web/docs/gateway/resource/doc/test_views.py
+  ai_agent 19-22,24-36
+src/dashboard/apigateway/apigateway/apis/web/docs/gateway/stage/views.py
+  ai_agent 22,41
+src/dashboard/apigateway/apigateway/tests/apis/web/docs/gateway/stage/test_views.py
+  ai_agent 19-21,26-30
+src/dashboard/apigateway/apigateway/apis/web/docs/gateway/resource/doc/views.py
+  ai_agent 22,45
+src/dashboard/apigateway/apigateway/apis/web/docs/gateway/resource/views.py
+  ai_agent 22,42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.1",
+  "base_commit_sha": "2fcf159337e0e4be6026874c52dcf1bf0fed324a",
+  "prompts": {}
+}

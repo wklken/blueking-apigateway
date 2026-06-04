@@ -1,0 +1,9 @@
+src/dashboard/apigateway/apigateway/biz/release/release.py
+  ai_agent 21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "869cbaa9dab03f971c4b97cb80b5c3ebfb9ffd8c",
+  "prompts": {}
+}
