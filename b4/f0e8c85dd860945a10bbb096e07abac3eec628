@@ -1,0 +1,21 @@
+src/dashboard/apigateway/apigateway/apis/open/support/serializers.py
+  s_aac2ecb5a9bd36::t_ccfb3dd84689b3 22,32
+src/dashboard/apigateway/apigateway/tests/apis/open/support/test_serializers.py
+  s_aac2ecb5a9bd36::t_a8c2d6c44f778e 1-47
+src/dashboard/apigateway/apigateway/tests/biz/resource/importer/test_openapi.py
+  s_aac2ecb5a9bd36::t_4203d06ce13fc7 76-128,130-134
+  s_aac2ecb5a9bd36::t_339c4c78debb7d 129
+src/dashboard/apigateway/apigateway/tests/apis/web/sdk/test_serializers.py
+  s_aac2ecb5a9bd36::t_561e927434613b 21,24,32-60
+src/dashboard/apigateway/apigateway/apis/web/sdk/serializers.py
+  s_aac2ecb5a9bd36::t_8a327847afce39 24,33-40
+src/dashboard/apigateway/apigateway/biz/resource/importer/openapi.py
+  s_aac2ecb5a9bd36::t_456c85faeaf9e6 20,22
+  s_aac2ecb5a9bd36::t_6c4e32b235f0a7 93-96,161-186
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "b4f0e8c85dd860945a10bbb096e07abac3eec628",
+  "prompts": {}
+}

@@ -1,0 +1,11 @@
+src/dashboard/apigateway/apigateway/apps/support/api_sdk/generators/swagger.py
+  ai_agent 60
+src/dashboard/apigateway/apigateway/tests/apps/support/api_sdk/generators/test_swagger.py
+  ai_agent 18-19,33-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "32f6740d9ca26734af893ed3086a6a0587ef762d",
+  "prompts": {}
+}
