@@ -1,0 +1,31 @@
+src/dashboard/apigateway/apigateway/apis/web/sdk/serializers.py
+  s_aac2ecb5a9bd36::t_8a327847afce39 24,33-40
+src/dashboard/apigateway/apigateway/biz/resource/importer/openapi.py
+  s_aac2ecb5a9bd36::t_6c4e32b235f0a7 93-96,163-188
+  s_aac2ecb5a9bd36::t_456c85faeaf9e6 20,22
+src/dashboard/apigateway/apigateway/tests/apis/open/support/test_serializers.py
+  s_aac2ecb5a9bd36::t_a8c2d6c44f778e 1-47
+src/dashboard/apigateway/apigateway/tests/biz/resource/importer/test_openapi.py
+  s_aac2ecb5a9bd36::t_4203d06ce13fc7 78-130,132-136
+  s_aac2ecb5a9bd36::t_339c4c78debb7d 131
+src/dashboard/apigateway/apigateway/apis/open/support/serializers.py
+  s_aac2ecb5a9bd36::t_ccfb3dd84689b3 22,32
+src/dashboard/apigateway/apigateway/tests/apis/web/sdk/test_serializers.py
+  s_aac2ecb5a9bd36::t_561e927434613b 21,24,32-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "b03d81b9eaabe12e1092d7dc206462a056ace2be",
+  "prompts": {},
+  "sessions": {
+    "s_aac2ecb5a9bd36": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e9142-a242-7dd3-ada5-51ff1bacf786",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
