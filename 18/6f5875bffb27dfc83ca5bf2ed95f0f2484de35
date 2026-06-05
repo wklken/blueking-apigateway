@@ -1,0 +1,39 @@
+test-bdd/scripts/25-平台工具/01-平台工具.spec.js
+  s_1ba5187381ac96::t_c59ac7f7c5b6c2 5,8-9,11-18
+test-bdd/runtime/playwright.config.js
+  s_1ba5187381ac96::t_1b6b733faceb5a 39
+test-bdd/scripts/17-基本信息/01-基本信息.spec.js
+  s_1ba5187381ac96::t_5c7568e1620dc4 55-56
+  s_1ba5187381ac96::t_749b43a0d4e517 33-36,48-50
+test-bdd/scripts/15-在线调试/01-在线调试.spec.js
+  s_1ba5187381ac96::t_ea4fa12219aa42 9-10
+test-bdd/runtime/helpers.js
+  s_1ba5187381ac96::t_7f55b7c2944a5f 185-187,190-193,195,224-225
+  s_1ba5187381ac96::t_990d4398ec8aee 684,686-687
+  s_1ba5187381ac96::t_ae6acf3ad86f1c 172-179,188,233
+  s_1ba5187381ac96::t_ab5e765e04e73c 688-693
+  s_1ba5187381ac96::t_29210b578e1eab 215,222,226
+test-bdd/scripts/01-网关管理/03-网关生命周期.spec.js
+  s_1ba5187381ac96::t_329c31ba50ccc3 109-110,118,120,122,124
+  s_1ba5187381ac96::t_b2f1d9780f772a 106,113-117,121,165
+  s_1ba5187381ac96::t_5d2768248aa70b 11-15,21-29,31-32,35,43-44,47-48,58-62,65-67,74-76,87,94-96,145,147,150,164
+  s_1ba5187381ac96::t_34ea7cea913940 50-52,55-56,107
+test-bdd/scripts/05-环境概览/01-环境概览.spec.js
+  s_1ba5187381ac96::t_a3814ed4a13a7b 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "186f5875bffb27dfc83ca5bf2ed95f0f2484de35",
+  "prompts": {},
+  "sessions": {
+    "s_1ba5187381ac96": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e9065-71df-7d23-a45a-3365ae37e9bf",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}

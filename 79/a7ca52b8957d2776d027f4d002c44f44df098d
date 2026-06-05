@@ -1,0 +1,29 @@
+test-bdd/runtime/playwright.config.js
+  s_1ba5187381ac96::t_738ce54fc39993 39-40
+test-bdd/runtime/helpers.js
+  s_1ba5187381ac96::t_370169dfef954c 339-341,343-348,350-354,356,366-370,390
+  s_1ba5187381ac96::t_65ac1f473051ac 331-332,334-338,342,349,355,357-365,371-372,392-393,398,408,413,420
+  s_1ba5187381ac96::t_e5e27e72cc1c7a 699,773
+  s_1ba5187381ac96::t_f37111ca3f11c1 333,754-763
+  s_1ba5187381ac96::t_fd21e41599347d 180-223,229,232,234,248,252-259,261-262
+test-bdd/scripts/27-告警策略/01-告警策略管理.spec.js
+  s_1ba5187381ac96::t_cddfbc4e2806a0 23
+test-bdd/scripts/17-基本信息/01-基本信息.spec.js
+  s_1ba5187381ac96::t_caa3eda51e1963 95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "79a7ca52b8957d2776d027f4d002c44f44df098d",
+  "prompts": {},
+  "sessions": {
+    "s_1ba5187381ac96": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e9065-71df-7d23-a45a-3365ae37e9bf",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
