@@ -1,0 +1,49 @@
+src/operator/pkg/utils/schema/3.16/schema.json
+  s_3c8f95098062d5::t_9e6cdda7c86d18 5358-5359,5394,5396,5399-5401,5404-5406,5409-5412,5415-5424,5426-5427,5440,5442-5444,5447-5449,5452-5461,5468-5469,5472-5474,5476-5485,5491,5501,5504-5505,5508-5519,5552,5554-5575,5577,5580-5615,5617-5618,5625-5626,5661-5662,5664,5667-5670,5677-5678,5708-5723,5728,5731-5732,5766-5771,5774-5776
+publish-support-apisix-3.16.md
+  h_2ed7cc0c587d3d 1-171
+apisix-prod-v1-schema.json
+  s_fc4d0f1dc60001::t_7682f8fa427fd3 1
+bk-plugin-jsonschema-check.md
+  s_277e32a066d3ec::t_503393a283dfac 1-2,21-257
+  s_277e32a066d3ec::t_01e4d1a0d76368 3-20
+dashboard-upgrade-django-to-5.2-notes.md
+  h_2ed7cc0c587d3d 1-110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "f9b621829e968d833e6568fa1d0df00b719f8c2b",
+  "prompts": {},
+  "humans": {
+    "h_2ed7cc0c587d3d": {
+      "author": "wklken <wklken@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_277e32a066d3ec": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "b248b73f-2d94-477a-aee6-63ce76a1176b",
+        "model": "gpt-5.5"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    },
+    "s_3c8f95098062d5": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "eb08b955-2120-4561-a404-3e4c1cb043c9",
+        "model": "gpt-5-mini"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    },
+    "s_fc4d0f1dc60001": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "42681347-a7e4-4505-999f-6b0a75ca76b9",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
