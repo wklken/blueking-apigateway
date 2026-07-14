@@ -7,6 +7,9 @@ applies.
 ## Scope
 
 - Work from `src/dashboard` unless a command says otherwise.
+- Read this file through **Post-Implementation Requirements** before running
+  commands. Do not stop after the architecture sections; checkout selection,
+  focused-test setup, and final gates are documented later in this file.
 - Do not touch sibling projects (`src/dashboard-front`, `src/core-api`,
   `src/mcp-proxy`, `src/esb`) for dashboard-only requests.
 - Before changing code, read the target file, its immediate caller or URL route,
@@ -14,6 +17,61 @@ applies.
 - Keep changes surgical. Do not reformat or refactor adjacent code unless the
   requested change requires it.
 - This subproject is Python-only. Frontend code lives in `src/dashboard-front`.
+
+## Checkout And Command Roots
+
+Resolve the active checkout before any PR-aware command, edit, or test. The
+shell may start in the repository's primary worktree even when the requested PR
+is checked out in another worktree. Workspace prefixes such as `/root/workspace`
+and `/data/workspace` may also differ, so never construct an absolute repository
+path from memory.
+
+```bash
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+DASHBOARD_ROOT="$REPO_ROOT/src/dashboard"
+git status --short --branch
+git rev-parse HEAD
+```
+
+When the task names a PR, branch, or worktree:
+
+1. Resolve the requested PR explicitly, for example with
+   `gh pr view <number> --repo <owner/repo> --json headRefName,headRefOid`.
+2. Inspect `git worktree list --porcelain` from `REPO_ROOT`.
+3. Select the worktree whose branch or HEAD matches the requested PR. If the
+   user supplied a worktree path, start there and verify it instead of searching
+   from the primary worktree.
+4. In that worktree, rerun `git status --short --branch` and `git rev-parse HEAD`
+   before changing files.
+
+Do not run helpers that infer the current PR, such as review-thread fetchers,
+from an unrelated checkout. Prefer explicit repository and PR arguments when a
+helper supports them. Inspect a repository helper's usage before invoking it;
+do not assume it implements `--help`.
+
+Use these command roots:
+
+| Command type | Required root |
+| --- | --- |
+| `git`, `gh`, worktree inspection, repository-level helpers | active `REPO_ROOT` |
+| dashboard `make`, `uv`, lint, and full test targets | active `DASHBOARD_ROOT` |
+| direct Django pytest | `DASHBOARD_ROOT`, using the wrapper below |
+| Django management commands | `DASHBOARD_ROOT`, with `uv run python apigateway/manage.py ...` |
+
+For focused tests, do not run plain `uv run pytest` from `src/dashboard`: it
+does not load the Django test environment used by the Makefile. Use:
+
+```bash
+cd "$DASHBOARD_ROOT"
+uv run bash -lc 'cd apigateway && set -a && . apigateway/conf/unittest_env && set +a && python -m pytest --nomigrations --ds apigateway.settings -q --tb=short apigateway/tests/path/to/test_file.py::TestClass::test_method'
+```
+
+Treat an error about unconfigured Django settings, a missing repository helper,
+or a PR not found for the current branch as a checkout/command-root failure, not
+as a product-test failure. Stop, re-check the active worktree and command root,
+then retry once with the documented entrypoint. Run optional path probes such
+as `ls` separately so a bad probe cannot prevent the real verification command
+from running.
 
 ## Project Overview
 
@@ -361,12 +419,8 @@ make test-cov
 make test-pdb
 ```
 
-Focused pytest pattern for agents:
-
-```bash
-cd src/dashboard
-uv run bash -lc 'cd apigateway && set -a && . apigateway/conf/unittest_env && set +a && python -m pytest --nomigrations --ds apigateway.settings -q --tb=short apigateway/tests/path/to/test_file.py::TestClass::test_method'
-```
+For focused pytest, use the wrapper in **Checkout And Command Roots**. It is the
+supported direct-test entrypoint for agents.
 
 Notes:
 
