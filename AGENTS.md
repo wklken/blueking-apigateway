@@ -1,89 +1,78 @@
 # AGENTS.md
 
-## Overview
+## 项目概述
 
-This is a multi-component API Gateway repository. The root guidance applies to
-the whole checkout; each component's nearest `AGENTS.md` defines its local
-runtime, architecture, and verification commands.
+BlueKing API Gateway 控制面是多组件 monorepo，负责网关配置、发布、权限、
+可观测性和 MCP 服务。根规则适用于整个仓库；进入组件后，以最近的
+`AGENTS.md` 补充或覆盖组件运行时、架构和验证要求。
 
-## Project Structure
+## 目录结构
 
-```
+```text
 .
-├── AGENTS.md
-├── README_EN.md
-├── README.md
-├── Makefile                # make test-bdd — run BDD test suite
-├── specs                   # SDD docs
-│   ├── 001-agent-test-suite
-│   └── 002-bdd-test-refactor
-├── src
-│   ├── core-api            # the core-api service, ref: src/core-api/AGENTS.md
-│   ├── dashboard           # the dashboard, ref: src/dashboard/AGENTS.md
-│   ├── dashboard-front     # the frontend of dashboard, ref: src/dashboard-front/AGENTS.md
-│   ├── esb                 # abandoned, not important, ignore it
-│   ├── mcp-proxy           # the mcp-proxy service, ref: src/mcp-proxy/AGENTS.md
-│   └── operator            # the operator service, ref: src/operator/AGENTS.md
-├── test                    # existing e2e test suite
-│   ├── bin
-│   ├── cases
-│   ├── Dockerfile
-│   ├── README.md
-│   └── sync
-└── test-bdd                # Playwright BDD test suite
-    ├── .gitignore          # Ignores runtime artifacts
-    ├── AGENTS.md           # Business context, module classification, domain gotchas
-    ├── cases/              # BDD test cases in Chinese markdown
-    ├── scripts/            # Generated Playwright test scripts
-    ├── runtime/            # Runner helpers, setup, teardown, and config
-    │   └── package-lock.json # Additional tracked runtime lockfile
-    ├── package.json
-    └── package-lock.json
+├── docs/                    # 开发文档、Harness 规范、技术规范
+├── specs/                   # SDD 规格与任务文档
+├── src/
+│   ├── core-api/            # Go 核心 API，读取 MySQL
+│   ├── dashboard/           # Python/Django 控制面
+│   ├── dashboard-front/     # Vue 3 管理前端
+│   ├── esb/                 # 已废弃，默认忽略
+│   ├── mcp-proxy/           # Go MCP 代理
+│   └── operator/            # Go etcd/APISIX 同步服务
+├── test/                    # 旧 E2E 测试
+└── test-bdd/                # Playwright BDD 测试
 ```
 
-## Working In This Repository
+## 工作规则
 
-- Read this file and the nearest nested `AGENTS.md` for every target path. Run
-  commands from the component root documented there; do not assume one runtime
-  or top-level gate covers all projects.
-- Keep component-local work inside that component unless the request or a
-  verified producer/consumer path requires a cross-component change.
-- Start investigations from the exact log, path, URL, endpoint, commit, PR, or
-  report named by the user, then verify it against the current checkout before
-  generalizing.
-- Before editing, testing, reviewing, or publishing from a repository with
-  multiple worktrees, verify the active root, branch, and commit with
-  `git rev-parse --show-toplevel`, `git status --short --branch`, and
-  `git rev-parse HEAD`. When a PR or worktree is named, match its explicit head
-  to `git worktree list --porcelain`; do not let a helper infer a PR from an
-  unrelated checkout.
-- For review findings, answer two questions separately: whether the issue is
-  real in the inspected code and whether the selected diff introduced it.
-- Follow the target component's verification contract. Markdown-only changes
-  require diff and reference checks, not unrelated component lint or test runs.
+- 修改前读取目标文件、相关调用方、最近测试和最近的 `AGENTS.md`。
+- 组件内任务保持在组件边界内；只有经验证的生产者/消费者链路才允许跨组件修改。
+- 多 worktree 场景先执行 `git rev-parse --show-toplevel`、
+  `git status --short --branch`、`git rev-parse HEAD` 和
+  `git worktree list --porcelain`，确认目标 checkout。
+- 不猜测路径、API、命令或测试结果；不确定时先读取或执行验证。
+- 只修改任务必需内容，不做顺手重构、批量格式化或无关清理。
+- 评审发现分别回答“问题是否真实”和“是否由选定 diff 引入”。
+- `src/esb` 已废弃，除非用户明确指定，否则不读取、不修改。
 
-## Project Relationship
+## 系统关系
 
-```
-apis create and publish:
-dashboard-front -> dashboard -> mysql -> dashboard(controller) -> etcd -> operator -> etcd -> blueking-apigateway-apisix
-
-publish event report:
-operator -> core-api -> mysql
-
-permission:
-blueking-apigateway-apisix -> core-api -> mysql
-
-mcp server:
-dashboard-front -> dashboard -> mysql -> mcp-proxy
+```text
+dashboard-front -> dashboard -> MySQL
+dashboard -> controller -> etcd -> operator -> APISIX etcd
+operator -> core-api -> MySQL
+APISIX data plane -> core-api -> MySQL
+dashboard -> MySQL -> mcp-proxy
 ```
 
-## SKILLs
+跨组件通过 HTTP、etcd 或数据库契约协作，禁止为方便而建立源码级反向依赖。
 
-Agent skills are located in `.agents/skills/`. Before executing any agent task described below, **read the full skill file first** to get detailed instructions, templates, and patterns.
+## 组件入口与验证
 
-These skills are designed to work with **any AI coding agent** (Claude Code, Codex, Cursor, Windsurf, Aider, etc.) that has access to Playwright MCP browser tools, file system operations, and shell commands.
+| 组件 | 入口规范 | 命令根 |
+|------|---------|-------|
+| Dashboard | `src/dashboard/AGENTS.md` | `src/dashboard` |
+| Dashboard Frontend | `src/dashboard-front/AGENTS.md` | `src/dashboard-front` |
+| Core API | `src/core-api/AGENTS.md` | `src/core-api` |
+| MCP Proxy | `src/mcp-proxy/AGENTS.md` | `src/mcp-proxy` |
+| Operator | `src/operator/AGENTS.md` | `src/operator` |
+| BDD | `test-bdd/AGENTS.md` | 仓库根 / `test-bdd` |
 
-| Skill | File | Description |
-|-------|------|-------------|
-| bdd-test-gen | `.agents/skills/bdd-test-gen/SKILL.md` | Generate executable Playwright test scripts from BDD case files by exploring a live environment |
+根 Makefile 只提供需要真实环境凭据的 `make test-bdd`。代码变更必须执行目标组件
+`AGENTS.md` 规定的 lint/test；仅 Markdown 变更执行 `git diff --check`、引用检查和复读，
+不运行无关组件测试。
+
+## 关键规范
+
+- [Harness 总览](docs/harness/README.md)
+- [上下文工程](docs/harness/context-engineering.md)
+- [架构约束](docs/harness/architectural-constraints.md)
+- [熵管理](docs/harness/entropy-management.md)
+- [工具能力](docs/harness/tooling.md)
+- [执行与验证](docs/harness/execution-verification.md)
+- [技术规范](docs/standards/README.md)
+- [词汇表](docs/glossary.md)
+
+## 开发工作流
+
+本项目使用 `workflow-agent` 按 [`docs/workflow.md`](docs/workflow.md) 定义的步骤推进迭代开发。workflow-agent 启动时主动感知当前状态（首次执行、崩溃恢复、错误暂停、重新开始），无需用户输入特定指令。不允许跳过工作流步骤或自行决定开发流程。
