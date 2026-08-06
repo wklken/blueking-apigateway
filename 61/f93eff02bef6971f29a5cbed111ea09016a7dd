@@ -1,0 +1,18 @@
+test-bdd/cases/29-AI网关/01-AI网关模型服务.md
+  h_2ed7cc0c587d3d 1-147
+test-bdd/cleanup-aigw.js
+  h_2ed7cc0c587d3d 1-68
+test-bdd/scripts/29-AI网关/01-AI网关模型服务.spec.js
+  h_2ed7cc0c587d3d 1-553
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.21",
+  "base_commit_sha": "61f93eff02bef6971f29a5cbed111ea09016a7dd",
+  "prompts": {},
+  "humans": {
+    "h_2ed7cc0c587d3d": {
+      "author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
