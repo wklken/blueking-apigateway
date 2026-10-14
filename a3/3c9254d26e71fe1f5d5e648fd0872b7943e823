@@ -1,0 +1,278 @@
+test-bdd/scripts/01-网关管理/01-创建网关.spec.js
+  s_a164de6362783a::t_3434df641eff15 3
+  s_a164de6362783a::t_224621ba4d1f6c 2,4-5,8,10-12,14-16,19-44,47-48,50-52
+test-bdd/scripts/00-路由冒烟/01-全站路由冒烟.spec.js
+  s_a164de6362783a::t_14c9007c53f372 1-2,4,6-13,15-29,31-54,56-62,65-84
+  s_a164de6362783a::t_f28759759ecd36 14
+  s_a164de6362783a::t_46b083884f2724 30
+test-bdd/scripts/21-组件管理/01-组件管理.spec.js
+  s_a164de6362783a::t_b11ec80caf972a 64-65,68-69
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/cases/04-SDK列表/01-SDK列表.md
+  s_a164de6362783a::t_0906c5c5dae856 4,11-17
+test-bdd/runtime/tests/verify-guard.js
+  s_a164de6362783a::t_dfb678f58be149 1-30
+test-bdd/runtime/helpers.js
+  s_a164de6362783a::t_0d1051e5721f15 519
+  s_a164de6362783a::t_4c37e294f1ea34 627-630,634
+  s_a164de6362783a::t_1889da139d18d2 332-333,347-358,378-386
+  s_a164de6362783a::t_dd415096f0d6b7 1179-1192
+  s_a164de6362783a::t_498f3f6524eafc 331,340-344
+  s_a164de6362783a::t_295a5be6f9c812 735,742
+  s_a164de6362783a::t_3b8be44fc39ae6 592,596,598,603,608,696,700
+  s_a164de6362783a::t_172b2d3e5c2c9b 751
+  s_a164de6362783a::t_bbf263c1459565 786-789,854
+  s_a164de6362783a::t_f28759759ecd36 1324
+  s_a164de6362783a::t_3434df641eff15 490,492-517,520-521,523
+  s_a164de6362783a::t_f8231a90057fa2 279,299-301,305,465
+  s_a164de6362783a::t_75d8fe3e221dd6 731,739-740,744
+  s_a164de6362783a::t_03c7db58395c9e 296
+  s_a164de6362783a::t_6b6461b24a6535 709,714
+  s_a164de6362783a::t_40c545dc811b92 387-388
+test-bdd/scripts/20-操作记录/01-操作记录.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/cases/31-1.25回归/01-资源功能.md
+  s_a164de6362783a::t_fd1b888289cc65 50-55
+  s_a164de6362783a::t_6568d98eeca8e0 1-36,38-39,41-49
+  s_a164de6362783a::t_a2264f41465770 37,40
+test-bdd/scripts/08-环境变量管理/01-环境变量管理.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/00-路由冒烟/02-动态详情.spec.js
+  s_a164de6362783a::t_fc3131106ceca8 1-4,7,9-13,17,20,24,30-53
+  s_a164de6362783a::t_3eb445fa929a36 8,15-16,18-19,25-29
+  s_a164de6362783a::t_83b472bce312b4 22-23
+  s_a164de6362783a::t_b0359c364dbda4 5
+  s_a164de6362783a::t_3872d3e42024ec 6,14,21
+test-bdd/cases/26-MCP市场/02-搜索与详情.md
+  s_a164de6362783a::t_5a987342ac7bd5 1-20
+test-bdd/cases/31-1.25回归/03-文档申请与工作台.md
+  s_a164de6362783a::t_71dc231796e0c8 1-21
+test-bdd/scripts/02-资源配置/02-编辑资源.spec.js
+  s_a164de6362783a::t_12da92bcd26212 2,4-5,8,10-12,14-17,21-30,34-41
+  s_a164de6362783a::t_3434df641eff15 3
+  s_a164de6362783a::t_0d573e837c1395 13
+test-bdd/scripts/31-1.25回归/02-MCP认证与市场.spec.js
+  s_a164de6362783a::t_53a0e841bc726f 1-78
+test-bdd/scripts/18-MCP服务/02-MCP服务配置.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/runtime/playwright.config.js
+  s_a164de6362783a::t_bbf263c1459565 40
+  s_a164de6362783a::t_5d5b63cb7df7d0 61-63
+  s_a164de6362783a::t_a7da39948b6d16 24-26,50,74
+test-bdd/scripts/26-MCP市场/02-搜索与详情.spec.js
+  s_a164de6362783a::t_b06ad4575b9eb3 1-35,37-40
+  s_a164de6362783a::t_416eacbca8dcba 36
+test-bdd/cases/02-资源配置/07-认证依赖与重复资源.md
+  s_a164de6362783a::t_f979a08a5b129b 1-24
+test-bdd/README.md
+  s_a164de6362783a::t_7408d1cef5d98d 22
+  s_a164de6362783a::t_30eea8691d52c5 29
+  s_a164de6362783a::t_9789f4eafcbd0f 1-21,23-28,30,32-33,35-36
+  s_a164de6362783a::t_669a175273bd78 34
+  s_a164de6362783a::t_498f3f6524eafc 31
+  s_a164de6362783a::t_5d5b63cb7df7d0 37-39
+test-bdd/scripts/02-资源配置/03-资源列表操作.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/runtime/test-data.js
+  s_a164de6362783a::t_7c909e4c5af4b4 1-46
+test-bdd/scripts/18-MCP服务/01-MCP服务管理.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/runtime/bdd-test.js
+  s_a164de6362783a::t_498f3f6524eafc 10-12,15-17
+  s_a164de6362783a::t_f28759759ecd36 6,14
+test-bdd/runtime/setup.js
+  s_a164de6362783a::t_711ee2b08e4cb4 21-24
+  s_a164de6362783a::t_a7da39948b6d16 99-101,170,228,268,289,327
+  s_a164de6362783a::t_53215091e792e3 5,10,328-336
+test-bdd/scripts/12-应用权限/01-应用权限.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/runtime/audit-coverage.js
+  s_a164de6362783a::t_c9af71c4a41a18 53-56
+  s_a164de6362783a::t_06aeb3d34a4543 1-52,57-59
+test-bdd/scripts/10-后端服务/01-后端服务管理.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/02-资源配置/04-资源插件.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+  s_a164de6362783a::t_5d5b63cb7df7d0 176
+  s_a164de6362783a::t_1dd29408d133ff 7-8,42,66,74-75,116,194,208,220,241,252,255-263,280-286,292,297-301,306-311,314-329,353-365,370-379,382,384-385
+  s_a164de6362783a::t_e576bbad316bc7 15-16,20-21,313,330-331,333,336-344,348,352,369
+  s_a164de6362783a::t_ae8b2a05904fd0 312
+  s_a164de6362783a::t_7af5b02122f405 383
+  s_a164de6362783a::t_14cd114afd8c9e 386
+  s_a164de6362783a::t_e2a2ba0c755292 152
+test-bdd/scripts/03-资源版本/01-版本管理.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/02-资源配置/05-导入导出资源.spec.js
+  s_a164de6362783a::t_183f50ad10af07 2,6-18,22-44,47-54,56-77,111-112
+  s_a164de6362783a::t_3434df641eff15 3
+  s_a164de6362783a::t_a29f6fa98b8967 4-5,79-109
+test-bdd/scripts/27-告警策略/02-告警记录观察.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/19-MCP权限审批/01-MCP权限审批.spec.js
+  s_a164de6362783a::t_b11ec80caf972a 13-14,17-18
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/17-基本信息/01-基本信息.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/25-平台工具/01-平台工具.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/runtime/tests/control-probe.fixture.js
+  s_a164de6362783a::t_48007e9ec5816e 1,7-8,10-11,14-21,50
+  s_a164de6362783a::t_e848b67daa8ed0 2-4,6,22-24,26-30,32-33
+  s_a164de6362783a::t_e1dfd5551ea22a 9,12-13
+  s_a164de6362783a::t_c5fa81b9a1364e 25,45-49
+  s_a164de6362783a::t_71f12109497f47 5,34-44
+  s_a164de6362783a::t_6b6461b24a6535 31
+test-bdd/scripts/26-MCP市场/01-MCP市场.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/22-文档分类/01-文档分类.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/29-AI网关/01-AI网关模型服务.spec.js
+  s_a164de6362783a::t_a7da39948b6d16 128,138,215,288,545
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/cases/02-资源配置/05-导入导出资源.md
+  s_a164de6362783a::t_5a987342ac7bd5 4,6,10-27
+  s_a164de6362783a::t_a29f6fa98b8967 28-39
+test-bdd/scripts/27-告警策略/01-告警策略管理.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/11-权限审批/01-权限审批.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+  s_a164de6362783a::t_b11ec80caf972a 26-27,30-31
+test-bdd/runtime/tests/control-integration.config.js
+  s_a164de6362783a::t_3b8be44fc39ae6 2-5
+  s_a164de6362783a::t_48007e9ec5816e 1
+test-bdd/scripts/28-个人工作台/02-我的待办.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/31-1.25回归/05-日志分享异常.spec.js
+  s_a164de6362783a::t_3e2c35a2716044 23
+  s_a164de6362783a::t_60993d102714f3 1-22,24-27
+test-bdd/cases/01-网关管理/01-创建网关.md
+  s_a164de6362783a::t_5a987342ac7bd5 40-45
+test-bdd/runtime/tests/guard-integration.config.js
+  s_a164de6362783a::t_8f2cf4752112b8 7
+  s_a164de6362783a::t_dfb678f58be149 8-9
+  s_a164de6362783a::t_d49c0e7c5d7ddc 1-6,10
+test-bdd/cases/28-个人工作台/04-标签与空结果筛选.md
+  s_a164de6362783a::t_5a987342ac7bd5 1-54
+test-bdd/scripts/31-1.25回归/01-资源功能.spec.js
+  s_a164de6362783a::t_6568d98eeca8e0 1-2,4-110,116-126,131-135,137,139-160,175
+  s_a164de6362783a::t_a2264f41465770 127,130
+  s_a164de6362783a::t_ecff447a09b9e4 3,111-115,136,138
+  s_a164de6362783a::t_03522197817986 128-129
+  s_a164de6362783a::t_fd1b888289cc65 161-174
+test-bdd/scripts/23-实时运行数据/01-实时运行数据.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/package.json
+  s_a164de6362783a::t_3b8be44fc39ae6 9
+  s_a164de6362783a::t_9789f4eafcbd0f 7-8,10
+test-bdd/cases/31-1.25回归/05-日志分享异常.md
+  s_a164de6362783a::t_60993d102714f3 1-13
+test-bdd/scripts/28-个人工作台/03-我的已办.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/runtime/tests/hard-failure-guard.test.js
+  s_a164de6362783a::t_31723c4f6cdd7f 36-55
+  s_a164de6362783a::t_06aeb3d34a4543 1-35
+test-bdd/scripts/06-环境资源信息/01-环境资源信息.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/01-网关管理/02-网关列表操作.spec.js
+  s_a164de6362783a::t_6304b1658d4d7e 2,4,6-17,21-22,25-33,36-54
+  s_a164de6362783a::t_3434df641eff15 3
+  s_a164de6362783a::t_ecaac5ac45c69b 5
+test-bdd/scripts/04-SDK列表/01-SDK列表.spec.js
+  s_a164de6362783a::t_4c9b342e71917f 4,11,28-32
+  s_a164de6362783a::t_3434df641eff15 3
+  s_a164de6362783a::t_46b083884f2724 2,7-10,12,14-21,24-27,33-39
+test-bdd/scripts/13-访问日志/01-访问日志.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/runtime/tests/guard-probe.fixture.js
+  s_a164de6362783a::t_d49c0e7c5d7ddc 1-18
+  s_a164de6362783a::t_f6f323b20745a7 19-28
+test-bdd/scripts/05-环境概览/02-环境生命周期.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/cases/31-1.25回归/02-MCP认证与市场.md
+  s_a164de6362783a::t_53a0e841bc726f 1-17
+test-bdd/scripts/24-API文档/01-API文档.spec.js
+  s_a164de6362783a::t_3434df641eff15 3
+  s_a164de6362783a::t_416eacbca8dcba 4,45-49
+  s_a164de6362783a::t_46b083884f2724 2,5,9-28,31-38,41-44
+test-bdd/fixtures/resource-openapi.json
+  s_a164de6362783a::t_ed3330a3edbe13 1-19
+test-bdd/scripts/31-1.25回归/04-BK-CLI展示.spec.js
+  s_a164de6362783a::t_b7bc80046fdf5e 1-24
+test-bdd/scripts/07-环境插件管理/01-环境插件管理.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/29-AI网关/02-模型服务界面与异常.spec.js
+  s_a164de6362783a::t_0d4243e374a360 1-78
+test-bdd/cases/00-路由冒烟/01-全站路由冒烟.md
+  s_a164de6362783a::t_14c9007c53f372 1,6,8,10,12-13,15-240
+test-bdd/scripts/31-1.25回归/03-文档申请与工作台.spec.js
+  s_a164de6362783a::t_71dc231796e0c8 1-12,16-36,39-82,107-113,117,121-133
+  s_a164de6362783a::t_53215091e792e3 88,102-104
+  s_a164de6362783a::t_deae9e912e5a5b 114-116,118-120
+  s_a164de6362783a::t_a278e2a1fef458 83-87,89-101,105-106
+  s_a164de6362783a::t_30b4baa6861d96 37-38
+  s_a164de6362783a::t_498f3f6524eafc 13-15
+test-bdd/cases/31-1.25回归/04-BK-CLI展示.md
+  s_a164de6362783a::t_b7bc80046fdf5e 1-17
+test-bdd/fixtures/1.25/request-body.json
+  s_a164de6362783a::t_a2264f41465770 2-4
+  s_a164de6362783a::t_a84e06749c7b24 1,5
+test-bdd/scripts/16-调试历史/01-调试历史.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/18-MCP服务/03-MCP服务可观测.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/02-资源配置/01-创建资源.spec.js
+  s_a164de6362783a::t_3434df641eff15 3
+  s_a164de6362783a::t_12da92bcd26212 2,8-9,13-19,21-29,33-39,43-49
+  s_a164de6362783a::t_40d3dff183a03e 4,20
+test-bdd/scripts/28-个人工作台/04-标签与空结果筛选.spec.js
+  s_a164de6362783a::t_32b452ad266086 4,14
+  s_a164de6362783a::t_6f3969cba342af 1-3,5-13,15-43
+test-bdd/cases/00-路由冒烟/02-动态详情.md
+  s_a164de6362783a::t_f979a08a5b129b 1-24
+test-bdd/scripts/01-网关管理/03-网关生命周期.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/05-环境概览/01-环境概览.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/09-发布记录/01-发布记录.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/15-在线调试/01-在线调试.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/cases/01-网关管理/02-网关列表操作.md
+  s_a164de6362783a::t_08406fec0bb2fe 19-20
+test-bdd/scripts/14-统计报表/01-统计报表.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/runtime/teardown.js
+  s_a164de6362783a::t_61b290d18c475c 5,17-18
+  s_a164de6362783a::t_eb1a519776caa6 1,6,9-10,12-13,16,19-21,23
+test-bdd/scripts/02-资源配置/07-认证依赖与重复资源.spec.js
+  s_a164de6362783a::t_0d573e837c1395 4,13-14
+  s_a164de6362783a::t_fc3131106ceca8 1-3,5-12,15-72
+test-bdd/cases/30-成员管理/01-成员表单与筛选.md
+  s_a164de6362783a::t_5a987342ac7bd5 1-27
+test-bdd/cases/29-AI网关/02-模型服务界面与异常.md
+  s_a164de6362783a::t_5a987342ac7bd5 1-34
+test-bdd/scripts/02-资源配置/06-资源文档.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/scripts/30-成员管理/01-成员表单与筛选.spec.js
+  s_a164de6362783a::t_6f3969cba342af 1-44
+test-bdd/scripts/28-个人工作台/01-我的申请.spec.js
+  s_a164de6362783a::t_3434df641eff15 4
+test-bdd/cases/02-资源配置/04-资源插件.md
+  s_a164de6362783a::t_ad91cd7c2250c9 4,31-160
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a33c9254d26e71fe1f5d5e648fd0872b7943e823",
+  "prompts": {},
+  "sessions": {
+    "s_a164de6362783a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13821-642a-7082-af49-6df39a4c77d5",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "wklken <wklken@gmail.com>"
+    }
+  }
+}
